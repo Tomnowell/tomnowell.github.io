@@ -24,9 +24,9 @@ Fear not, there are many css templates available for free or for very little mon
 ## Go solo
 
 
-If you want to go a bit more custom, but don't want to write all your own CSS I recommend the [bootstrap](https://getbootstrap.com/) library. Also I used [fontawesome](fontawesome.com) for nice icons. They make any site look a thousand times more professional.
+If you want to go a bit more custom, but don't want to write all your own CSS I recommend the [bootstrap](https://getbootstrap.com/) library. I also used [fontawesome](fontawesome.com) for nice icons. They make any site look a thousand times more professional.
 
-Whatever you decide, it is really easy to get a static page up and running in no time.
+Whatever you decide, it is really easy to get a static page up and running in a short time.
 
 ## Add graphics
 
