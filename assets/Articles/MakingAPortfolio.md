@@ -14,7 +14,7 @@ I need a website.
 ## Develop
 
 That makes sense, if I want to be a developer I should develop. I have a few projects I think the world could use
-or at least that I am not so utterly ashamed of that I don't mind making the repositories public. Check out my [sourdough bread calculator](https://github.com/Tomnowell/IlPane). But its been years since I did anything serious with HTML or CSS and I am not
+or at least that I am not so utterly ashamed of that I don't mind making the repositories public. Check out my [sourdough bread calculator](https://github.com/Tomnowell/IlPane). But it's been years since I did anything serious with HTML or CSS and I am not
 (yet) a very good designer.
 
 ## Templates
@@ -34,7 +34,7 @@ Of course the template is just one part of designing a website. You'll probably 
 
 ## Add Content
 
-Add a few of your projects and write about your skills. I added an email me form from [formspree](https://formspree.io/) there are alternatives, in fact I am currently implementing a [typeform](https://try.typeform.com/home/?gclsrc=aw.ds&&tf_campaign=brand_9724248146_v2&tf_source=google&tf_medium=paid&tf_content=101060309498_427947667564&tf_term=ytypeform&tf_dv=c&tf_matchtype=e&tf_adposition=&gclid=CjwKCAiA6Y2QBhAtEiwAGHybPaS-yJkyhvrj88r7Vyryp7RkN8lz0EKjSeNZBbEk8_KiAAgq7zIlARoCVxYQAvD_BwE&gclsrc=aw.ds) form as a feedback / comments box for this blog. Literally, watch this space. Formspree are more generous with their free tier. You get 50 free form submissions a month.  Typeform give you just 10, so please think about your comments carefully before posting them. Just create your forms back end on the provider and they will provide an endpoint for your form. Send your form data to the endpoint as a http POST request and Bob's your uncle, well, he's my uncle.
+Add a few of your projects and write about your skills. I added an email me form from [formspree](https://formspree.io/) there are alternatives, in fact I am currently implementing a [typeform](https://try.typeform.com/home/?gclsrc=aw.ds&&tf_campaign=brand_9724248146_v2&tf_source=google&tf_medium=paid&tf_content=101060309498_427947667564&tf_term=ytypeform&tf_dv=c&tf_matchtype=e&tf_adposition=&gclid=CjwKCAiA6Y2QBhAtEiwAGHybPaS-yJkyhvrj88r7Vyryp7RkN8lz0EKjSeNZBbEk8_KiAAgq7zIlARoCVxYQAvD_BwE&gclsrc=aw.ds) form as a feedback / comments box for this blog. Literally, watch this space. Formspree are more generous with their free tier. You get 50 free form submissions a month.  Typeform give you just 10, so please think about your comments carefully before posting them. Just create your forms back end on the provider and they will provide an endpoint for your form. Send your form data to the endpoint as a http POST request and Bob's your uncle, well, he's my uncle. Hi Rob!
 
 ## Hosting
 
@@ -81,4 +81,4 @@ Peace & love & learn :)
 
 ### Thanks
 
-I'd like to thank [Stephen Anderson](https://github.com/stephenandersondev) for his post about [how to make a portfolio for free](https://levelup.gitconnected.com/how-to-build-a-web-developer-portfolio-for-free-d456699ecef7). I got some great hints and inspiration from your blog.
+I'd like to thank [Stephen Anderson](https://github.com/stephenandersondev) for his post about [how to make a portfolio for free](https://levelup.gitconnected.com/how-to-build-a-web-developer-portfolio-for-free-d456699ecef7). I got some great hints and inspiration.
