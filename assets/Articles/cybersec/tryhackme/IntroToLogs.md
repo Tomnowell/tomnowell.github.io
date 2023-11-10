@@ -41,7 +41,7 @@ There's a lot of good information here about log types and how they are structur
 
 ##### Task 2 was discussing an Nginx server which is a web server...
 
-! Web Server Log
+>! Web Server Log !<
 
 #### Q2: Based on the list of log formats in this task, what log format is used by the log file specified in the note from Task 2?
 
