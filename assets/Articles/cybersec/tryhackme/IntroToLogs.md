@@ -25,13 +25,13 @@ password: Logs321!
 
 ##### cat Desktop/note.txt (or open in the GUI)
 
-! Perry
+>! Perry
 
 #### Q2: What is  full path to the suggested log file for initial investigation?
 
 ##### look in cat output of the note!
 
-! /var/log/gitlab/nginx/access.log
+>! /var/log/gitlab/nginx/access.log
 
 ### Types, Formats, and Standards
 
