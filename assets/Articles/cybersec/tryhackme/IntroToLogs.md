@@ -25,7 +25,13 @@ password: Logs321!
 
 > cat Desktop/note.txt (or open in the GUI) 
 
->! Perry
+<details>
+  <summary>Spoiler warning</summary>
+  
+  Answer: Perry
+  
+</details>
+ 
 
 *Q2: What is  full path to the suggested log file for initial investigation?*
 
