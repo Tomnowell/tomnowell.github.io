@@ -2,7 +2,7 @@
 
 ## Learn the fundamentals of logging, data sources, collection methods and principles to step into the log analysis world
 
-## SOC 2 Learning Pathway
+## TryHackMe SOC 2 Learning Pathway
 
 ### Introduction
 
