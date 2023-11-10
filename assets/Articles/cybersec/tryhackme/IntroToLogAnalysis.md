@@ -34,14 +34,27 @@ Log monitoring and alerts are very important and proper implementation can allow
 
 When confronted with anomalous data external research and threat intelligence allow us to understand what we are seeing and proactively take steps to remediate the situation.
 
-#### Q1: What's the term for a consolidated chronological view of logged events from diverse sources, often used in log analysis and digital forensics?
+*Q1: What's the term for a consolidated chronological view of logged events from diverse sources, often used in log analysis and digital forensics?*
 
-##### Well, I thought it was a cool name :)
+> Well, I thought it was a cool name :)
 
->! super timeline
+<details>
 
-#### Q2: Which threat intelligence indicator would 5b31f93c09ad1d065c0491b764d04933 and 763f8bdbc98d105a8e82f36157e98bbe be classified as?
+  <summary>Spoiler warning: Answer</summary>
+  
+    super timeline
 
-##### They certainly look like some kind of hash.
+</details>
 
->! file hashes
+*Q2: Which threat intelligence indicator would 5b31f93c09ad1d065c0491b764d04933 and 763f8bdbc98d105a8e82f36157e98bbe be classified as?*
+
+> They certainly look like some kind of hash.
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    file hashes
+
+</details>
+
