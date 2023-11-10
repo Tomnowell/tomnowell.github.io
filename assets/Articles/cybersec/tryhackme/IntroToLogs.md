@@ -6,6 +6,7 @@
 
 ### Introduction
 
+This is a guideo to [tryhackme: Intro To Logs](https://tryhackme.com/room/introtologs)
 Some nice graphics and a brief outline of learning outcomes.
 
 ### Expanding Perspectives: Logs as Evidence of Historical Activity
