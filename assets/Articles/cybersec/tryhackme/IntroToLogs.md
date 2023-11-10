@@ -18,11 +18,7 @@ Start the machine here and it should open in the split-screen view. If it doesn'
 
 For this machine you actually don't really need a desktop so I just ssh in from my WSL linux install through the VPN. I will document my usual setup here soon. 
 
-However you choose to connect the login credentials for damianhall are here
-
-login: damianhall
-
-password: Logs321!
+However you choose to connect the login credentials for damianhall are on this page.
 
 *Q1:  What is the name of your colleague who left a note on the Desktop?*
 
