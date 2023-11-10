@@ -25,13 +25,13 @@ password: Logs321!
 
 ##### cat Desktop/note.txt (or open in the GUI)
 
->! Perry
+! Perry
 
 #### Q2: What is  full path to the suggested log file for initial investigation?
 
 ##### look in cat output of the note!
 
->! /var/log/gitlab/nginx/access.log
+! /var/log/gitlab/nginx/access.log
 
 ### Types, Formats, and Standards
 
@@ -41,7 +41,7 @@ There's a lot of good information here about log types and how they are structur
 
 ##### Task 2 was discussing an Nginx server which is a web server...
 
->! Web Server Log
+! Web Server Log
 
 #### Q2: Based on the list of log formats in this task, what log format is used by the log file specified in the note from Task 2?
 
