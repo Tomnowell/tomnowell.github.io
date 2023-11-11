@@ -6,7 +6,7 @@
 
 ### Introduction
 
-This room concludes the Log Analysis module of the SOC Level 2 learning pathway.
+This room, (Intro to Log Analysis)[https://tryhackme.com/room/introtologanalysis]concludes the Log Analysis module of the SOC Level 2 learning pathway.
 
 While there is no room VM there are three tasks with file downloads and I recommend downloading these to an environment where you are comfortable manipulating from the command line. For me that's a bash or similar shell along with built in Linux programs such as cat, sort, grep. I'm sure this is equally do-able from a windows Command prompt or from Powershell. In fact diving deeper into powershell is on my to do list, but for now, I'm going to be doing this in my Ubuntu installation in WSL.
 
@@ -57,4 +57,129 @@ When confronted with anomalous data external research and threat intelligence al
     file hashes
 
 </details>
+
+### Detection Engineering
+
+Next we turn our attention to noticing patterns within logs. Being able to notice (or even better automate detection of) patterns that suggest unwanted or anomalous behaviour is essential for analysing logs. 
+
+First we learn where some common logs are stored. Logs for web servers, databases, PHP web applications, OS logs and firewall logs.
+
+We then look at some common patterns including user behaviour and attack signatures including SQL injection, XSS and path traversal.
+
+*What is the default file path to view logs regarding HTTP requests on an Nginx server?*
+
+> This is stated earlier in the Task...
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    /var/log/nginx/access.log
+
+</details>
+
+
+*A log entry containing %2E%2E%2F%2E%2E%2Fproc%2Fself%2Fenviron was identified. What kind of attack might this infer?*
+
+> All those %2E look like URL encoded periods and a few %2F represent forward slashes - It looks like someone is navigating through a file system.
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    path traversal
+
+</details>
+
+### Task 5: Automated vs. Manual Analysis
+
+Here we learn about some tools that automate log analysis. Many of the modern tools use 'AI'. Likely they use machine learning to recognise trends and patterns. It's noted that the 'AI' landscape is evolving and solutions will likely become more effective with further development. 
+
+The advantages and disadvantages of automated and manual analysis are considered. Basically automated is quick but expensive and highly dependent on the effectiveness of the detection model or AI, manual analysis is 'cheap' in terms of tooling and contributes to the organisational understanding of the employee conducting the analysis however it is time consuming (and therefore also expensive) and prone to human error.
+
+*Q1: A log file is processed by a tool which returns an output. What form of analysis is this?*
+
+> If a tool does the analysis for you it is...
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    automated
+
+</details>
+
+*Q2: An analyst opens a log file and searches for events. What form of analysis is this?*
+
+> Um...the opposite
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    manual
+
+</details>
+
+# Task 6: Log Analysis Tools: Command Line
+
+Yay some task files to download! The examples are all done in bash on Linux so I'll do this in WSL. It's mostly an introduction to some Linux tools. You've probably met cat, less, wc, cut, tail, uniq, sort, sed, awk and grep before. We used most of them in the (Intro to Logs)[https://tomnowell.github.io/IntroToLogs.html] room. Here's a chance to brush up on their usage with some examples!
+
+I definitely recommend trying these exercises before looking at my hints or answers. If you're not used to using these tools on the command line (like me) it may seem daunting at first. I panicked! But, it's easier than it looks!
+
+*Q1: Use a combination of the above commands on the apache.log file to return only the URLs. What is the flag that is returned in one of the unique entries?*
+
+> This isn't the cleanese way to do this - but if you cut the 7th column you get just the path and the flag is pretty obvious sitting there near the bottom of the list.
+> cut -d ' ' -f 7 apache.log
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    c701d43cc5a3acb9b5b04db7f1be94f6
+
+</details>
+
+*Q2: In the apache.log file, how many total HTTP 200 responses were logged?*
+
+> use awk to select all 200 response codes and pipe it to wc - the first value is our count  
+> awk '$9 == 200' apache.log | wc
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    52
+
+</details>
+
+*Q3: In the apache.log file, which IP address generated the most traffic?*
+
+> this should isolate the ip addresses, sort them and count the occurrences
+
+> cut -d ' ' -f 1 apache.log | sort -n -r | uniq -c  
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    145.76.33.201
+
+</details>
+
+*Q4: What is the complete timestamp of the entry where 110.122.65.76 accessed /login.php?*
+
+> This command returns just one log entry - the timestamp is the answer!
+
+> grep "/login.php" apache.log | grep "110.122.65.76"
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    31/Jul/2023:12:34:40 +0000
+
+</details>
+
+
+
 
