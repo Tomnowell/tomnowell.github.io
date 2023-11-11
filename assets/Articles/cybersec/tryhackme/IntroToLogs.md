@@ -6,7 +6,7 @@
 
 ### Introduction
 
-This is a guideo to [tryhackme: Intro To Logs](https://tryhackme.com/room/introtologs)
+This is a guide to [tryhackme: Intro To Logs](https://tryhackme.com/room/introtologs)
 
 Some nice graphics and a brief outline of learning outcomes.
 
