@@ -180,6 +180,57 @@ I definitely recommend trying these exercises before looking at my hints or answ
 
 </details>
 
+### Task 7: Log Analysis Tools: Regular Expressions
 
+Regular expressions often strike fear into the noobs - I include myself in that number so it's time to face the fear and get some regex exp. In fact we often use regex alongside grep with the -E parameter - so it's not all that scary. Regex is a wonderful tool, it just looks quite cryptic and needs some practice. Let's get stuck in!
 
+There is a linked room to learn and practice (regular expressions)[https://tryhackme.com/room/catregex] - I did it a long time ago - but I could probably use a refresher.
+
+Download the file if you want to practice on it, but the questions actually don't really require it. I'd like a bit of practical work, though.
+
+*How would you modify the original grep pattern above to match blog posts with an ID between 22-26?*
+
+> We will take just the regex part of the command in the inverted commas and change it so that instead of finding values between 10 and 19 it will select values between 22 and 26. The original command is: grep -E 'post=1[0-9]' apache-ex2 log
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    post=2[2-6]
+
+</details>
+
+*What is the name of the filter plugin used in Logstash to parse unstructured log data?*
+
+> This name was actually in the tech news cycle recently - unfortunately because of a Mr./Ms. E. Musk...
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    grok
+
+</details>
+
+### Task 8: Log Analysis Tools: CyberChef
+
+Wow, I did *not* know that Cyberchef was created by GCHQ - Nice one GB secret service. Perhaps Ms. Moneypenny and Q have become more open in their old age! 
+
+It makes sense to keep track of what people are trying to decode, though. So, I'm sure they're doing a *lot* of data collection through the site. If you are decoding sensitive stuff perhaps don't use cyberchef to do it. Otherwise it's a very handy tool.
+
+*Locate the "loganalysis.zip" file under /root/Rooms/introloganalysis/task8 and extract the contents.*
+
+> I'm not exactly sure what they mean with this question - perhaps they've changed the room without changing all the questions - luckily this one doesn't actually require an answer
+
+ 
+
+**
+> We're presented with the following regex to find ip addresses in the information for the task, so this is pretty straightforward. Just add a regex module to the recipe and change the output format to list matches only then search for the given octet '212'. I used the provided regular expression: \b([0-9]{1,3}\.){3}[0-9]{1,3}\b 
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    212.14.17.145
+
+</details>
 
