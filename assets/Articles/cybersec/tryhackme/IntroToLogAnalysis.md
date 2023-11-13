@@ -12,7 +12,7 @@ While there is no room VM there are three tasks with file downloads and I recomm
 
 As in my other write-up or walkthroughs I am not going to just repeat the information in the room.
 
-### Log Analysis Basics
+### Task 2 - Log Analysis Basics
 
 Understanding the information that can be stored in logs is important. Understanding what kind of logs to look for when looking for certain information is useful. Knowing why logs are useful and in what contexts they can be used is also important.
 
@@ -20,7 +20,7 @@ Most things that happen on a computer can be logged. This ranges from applicatio
 
 Understanding that every log is a perspective on activities within an environment is important and leads us to realise that they are essential for understanding our own systems, investigating anomalies and detecting threats.
 
-### Investigation Theory
+### Task 3 - Investigation Theory
 
 A lot of information about time. It's pertinent, too. A timeline is almost certainly essential in any security investigation. Syncronising and normalising these details is essential to correlate and enrich each log with extra perspective from other logs. Here we are introduced to timestamps, timelines and super timelines. Super timeline was a new concept for me at this point. It can be thought of as a consolidated timeline showing a single view of events across different components and systems. 
 
@@ -58,7 +58,7 @@ When confronted with anomalous data external research and threat intelligence al
 
 </details>
 
-### Detection Engineering
+### Task 4 - Detection Engineering
 
 Next we turn our attention to noticing patterns within logs. Being able to notice (or even better automate detection of) patterns that suggest unwanted or anomalous behaviour is essential for analysing logs. 
 
@@ -91,7 +91,7 @@ We then look at some common patterns including user behaviour and attack signatu
 
 </details>
 
-### Task 5: Automated vs. Manual Analysis
+### Task 5 - Automated vs. Manual Analysis
 
 Here we learn about some tools that automate log analysis. Many of the modern tools use 'AI'. Likely they use machine learning to recognise trends and patterns. It's noted that the 'AI' landscape is evolving and solutions will likely become more effective with further development. 
 
@@ -120,7 +120,7 @@ The advantages and disadvantages of automated and manual analysis are considered
 
 </details>
 
-# Task 6: Log Analysis Tools: Command Line
+# Task 6 - Log Analysis Tools: Command Line
 
 Yay some task files to download! The examples are all done in bash on Linux so I'll do this in WSL. It's mostly an introduction to some Linux tools. You've probably met cat, less, wc, cut, tail, uniq, sort, sed, awk and grep before. We used most of them in the (Intro to Logs)[https://tomnowell.github.io/IntroToLogs.html] room. Here's a chance to brush up on their usage with some examples!
 
@@ -180,7 +180,7 @@ I definitely recommend trying these exercises before looking at my hints or answ
 
 </details>
 
-### Task 7: Log Analysis Tools: Regular Expressions
+### Task 7 - Log Analysis Tools: Regular Expressions
 
 Regular expressions often strike fear into the noobs - I include myself in that number so it's time to face the fear and get some regex exp. In fact we often use regex alongside grep with the -E parameter - so it's not all that scary. Regex is a wonderful tool, it just looks quite cryptic and needs some practice. Let's get stuck in!
 
@@ -211,19 +211,19 @@ Download the file if you want to practice on it, but the questions actually don'
 
 </details>
 
-### Task 8: Log Analysis Tools: CyberChef
+### Task 8 - Log Analysis Tools: CyberChef
 
-Wow, I did *not* know that Cyberchef was created by GCHQ - Nice one GB secret service. Perhaps Ms. Moneypenny and Q have become more open in their old age! 
+Wow, I did *not* know that Cyberchef was created by GCHQ - Nice one GB secret service. Perhaps Ms. Moneypenny and Q have become more open in their old age!
 
-It makes sense to keep track of what people are trying to decode, though. So, I'm sure they're doing a *lot* of data collection through the site. If you are decoding sensitive stuff perhaps don't use cyberchef to do it. Otherwise it's a very handy tool.
+It makes sense to keep track of what people are trying to decode, though. So, I'm sure they're doing a *lot* of data collection through the site. If you are decoding sensitive stuff perhaps don't use Cyberchef to do it. Otherwise it's a very handy tool.
 
 *Locate the "loganalysis.zip" file under /root/Rooms/introloganalysis/task8 and extract the contents.*
 
 > I'm not exactly sure what they mean with this question - perhaps they've changed the room without changing all the questions - luckily this one doesn't actually require an answer
 
  
+*Upload the log file named "access.log" to CyberChef. Use regex to list all of the IP addresses. What is the full IP address beginning in 212?*
 
-**
 > We're presented with the following regex to find ip addresses in the information for the task, so this is pretty straightforward. Just add a regex module to the recipe and change the output format to list matches only then search for the given octet '212'. I used the provided regular expression: \b([0-9]{1,3}\.){3}[0-9]{1,3}\b 
 
 <details>
@@ -233,4 +233,80 @@ It makes sense to keep track of what people are trying to decode, though. So, I'
     212.14.17.145
 
 </details>
+
+*Using the same log file from Question #2, a request was made that is encoded in base64. What is the decoded value?*
+
+> Well, I couldn't get this to work properly in CyberChef - I found a string that certainly looks like base64 in a GET request: 'VEhNe0NZQkVSQ0hFRl9XSVpBUkR9== ' I used the bash command
+> echo 'VEhNe0NZQkVSQ0hFRl9XSVpBUkR9== ' | base64 -d
+> to decode it and that did actually come out with the answer but it also stated that it was an invalid input. 
+> I then reversed the direction and encoded the answer with:
+> echo 'THM{THIS_THIS_IS_NOT_THE_ACTUAL_FLAG}' | base64
+> which resulted in the encoded string:
+> VEhNe0NZQkVSQ0hFRl9XSVpBUkR9Cg==
+> Perhaps there is some different character encoding...
+> I then tried it again in Cyberchef and it worked with either encoded string so perhaps Cyberchef just froze in my browser.
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    THM{CYBERCHEF_WIZARD}
+
+</details>
+
+*Using CyberChef, decode the file named "encodedflag.txt" and use regex to extract by MAC address. What is the extracted value?*
+
+> Again Cyberchef makes this too easy! First we need to decode 'from base64'. I then tried making a regex for mac addresses until I found that Cyberchef has an 'extract MAC address' function. Apply it, and we're left with the answer.
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    08-2E-9A-4B-7F-61
+
+</details>
+
+### Task 9 - Log Analysis Tools: Yara and Sigma
+
+In this task, we are introduced to the tool, Sigma. It uses Yara rules to find information in log files using pattern matching. We came across (Yara)[https://tryhackme.com/room/yara] in the SOC 1 learning path.
+
+*What languages does Sigma use?*
+
+> Well Sigma uses the Yara rule structure which in turn uses the .... language.
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    YAML
+
+</details>
+
+*What keyword is used to denote the "title" of a Sigma rule?*
+
+> The answer is literally in the question.
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    title
+
+</details>
+
+*What keyword is used to denote the "name" of a rule in YARA?*
+
+> Have a look at an example, the word that preceeds the title is...
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+  
+    rule
+
+</details>
+
+### Conclusion
+
+Well that was quite a bit of work. It took me a few days to fit in around my full time job. But it was worth it. Lots of ways to explore logs and some idea of what to look for. 
 
