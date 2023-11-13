@@ -202,4 +202,4 @@ Again follow the url (not the link) in your browser (connected to the THM networ
 
 ### Conclusion
 
-I learned *a lot* from this room. And it has already started me off on exploring the powerful awk and sed programs.
+I learned *a lot* from this room. And it has already started me off exploring the powerful awk and sed programs.
