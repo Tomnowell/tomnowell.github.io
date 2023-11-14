@@ -189,13 +189,208 @@ That's the end of the Linux VM. *Phew* quite a lot to ingest. But all good fun!
 
 ### Task 7 - Splunk: Installing on Windows
 
+We're going to connect using the browser again.
 
+> Open the Downloads folder and run the splunk_instance installer.
+
+The machine will whir away for a while considering it's next move before presenting the user with a chance to read the user license agreement and view or change the default install options. I thoroughly read the EULA before ticking the box as I am sure you will - and I left all the default options.
+
+> Tick EULA box and click Next
+> Add name and password for administrator account
+> Next!
+
+
+About 5 minutes later the install finished and I was prompted to open a browser to view splunk. I declined this time.
+
+You can connect to the splunk instance in the browser either on the local loopback address from the browser 127.0.0.1:8000 or over the VPN from attackbox or your computer using http://VM_IP_ADDRESS:8000. Almost the same as for the linux box I guess just coffily doesn't resolve to localhost.
+
+Alright! We're done here time to move on to the forwarders!
+
+*What is the default port Splunk runs on?*
+
+> Weren't we just asked this question for the Linux version. I guess they could use different ports. But why would they? They don't!
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+    
+    8000
+
+</details>
+
+---
+
+*Click on the Add Data tab; how many methods are available for data ingestion?*
+
+> Before trying to search anything click on the add data button on the first splunk page. There are only a few ways to add data
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+    
+    3
+
+</details>
+
+
+---
+*Click on the Monitor option; what is the first option shown in the monitoring list?*
+
+> Click on the Monitor option. What's at the top of the list?
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+    
+    Local Event Logs
+
+</details>
+
+---
 
 ### Task 8 - Installing and Configuring Forwarder
 
+> In splunk, configure the receiver as shown in the room info
+> Settings -> Forwarding and Receiving -> New Receiving Port -> 9997 (or whatever port you like)
+
+Then install the splunk forwarder. It's already in the Downloads folder.
+
+*What is the full path in the C:\Program Files where Splunk forwarder is installed?*
+
+> The install path was given when we checked the default install path and accepted the EULA. It's also in a screen shot in the task materials. Remember Windows file slashes go the *wrong* way '\\'
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+    
+    C:\Program Files\SplunkUniversalForwarder
+
+</details>
+
+
+*What is the default port on which Splunk configures the forwarder?*
+
+> This is also stated as a part of the setup procedure and we already set it as a listen port within splunk
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+    
+    C:\Program Files\SplunkUniversalForwarder
+
+</details>
+
 ### Task 9 - Splunk: Ingesting Windows Logs
+
+We need to get some data into splunk. We won't use the CLI this time. Back to the browser.
+
+> Settings -> Add Data -> Forward
+
+_Select Forwarders_
+> Select Forwarders -> Available host(s)
+> Click on the Windows coffeylab entry - it will then appear in selected host(s) too
+> Add a new Server Class Name - I called it coffee_lab as that was used in the example.
+> Next
+
+_Select Source_
+
+> Local Event Logs -> (Application & Security & System) Click on each - they will appear in the selected items pane.
+> Next
+
+_Input Settings_
+
+> Create New Index
+> Enter a name - I used win_logs to follow the example
+> Next
+
+_Review_
+
+> OK.
+> Next
+
+_Done_
+> Submit
+
+> Did you count how many options there were for Local Event Logs. I didn't but that scrollbar doesn't go down far. There were:
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+    
+    5
+
+</details>
+
+> search the query:
+> index="win_logs" EventCode=4624
+> Open any of the log entries and find the message field.
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+    
+    An account was successfully logged on.
+
+</details>
 
 ### Task 10 - Ingesting Coffely Web Logs
 
+Nearly there, we've got a forwarder set up. Now let's look at ingesting some logs from a web server. You don't actually need to do this to answer the room's questions but it's probably good to know how to monitor a webserver's log files.
+
+> Settings -> Add Data
+
+_Select Forwarders_
+
+> From available host(s) select Windows coffeylab
+> Add a new Server Class Name - I followed the example and named it web_logs
+> Next
+
+_Select Sources_
+
+Note the directory name is given but the log filename given ends in * which represents a number. Let's look in the directory and find what file we need to add. Check out the directory in Explorer:
+
+> C:\inetpub\logs\LogFiles\
+
+My instance had a log file called W3SVC1 - the example on the task instructions uses W3SVC2. Yours may be different.
+
+> Files & Directories -> C:\inetpub\logs\LogFiles\W3SVC1
+> Next
+
+_Input Settings_
+
+Looks like this is a Microsoft IIS Server:
+
+> Select -> IIS 
+> Index -> win_logs
+> Next
+
+_Review_
+
+> OK.
+> Next
+
+_Done_
+
+> Submit
+
+From these logs (and from the question posed) we see that there is a secret-flag.html page
+
+_Note:_ Whoever made this website is probably paying a bit too much for their coffee and, more worryingly, does not know how to make a cappuccino. Luckily they know about Splunk so we'll let that go.
+
+> Go to http://coffely.thm/secret-flag.html and look at the orders. The flag is in the message section
+
+
+*In the lab, visit http://coffely.thm/secret-flag.html; it will display the history logs of the orders made so far. Find the flag in one of the logs.*
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+    
+    {COffely_Is_Best_iN_TOwn}
+
+</details>
+
+
 ### Conclusion
 
+The Windows VM was a little sluggish in installing Splunk and the forwarder. The browser within browser interface is quite laggy. But the Windows VM was very straightforward after doing the Linux VM. All in all it was good fun and an interesting lesson!
