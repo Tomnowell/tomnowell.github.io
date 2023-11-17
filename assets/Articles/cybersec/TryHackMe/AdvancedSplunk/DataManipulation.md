@@ -18,16 +18,18 @@ Here we can start the machine. Unfortunately we're not given login credentials. 
 
 From the machines terminal in split screen browser:
 
-> sudo passwd ubuntu
-> Enter a new password
+```bash
+sudo passwd ubuntu # Enter a new password when prompted
+```
+
 
 We can now ssh in from our machine over the VPN using:
 
-> ssh ubuntu@VM_IP_ADDRESS
-> and entering our new password when prompted
-> We can elevate to root with
-> sudo su
+```bash
+ssh ubuntu@VM_IP_ADDRESS # enter our new password when prompted
 
+sudo su # Elevate to root when ssh connected
+```
 
 *Q1: Connect to the Lab.*
 
@@ -35,8 +37,11 @@ We can now ssh in from our machine over the VPN using:
 
 *Q2: How many Python scripts are present in the ~/Downloads/scripts directory?*
 
-> cd Downloads/scripts
-> ls
+```bash
+cd Downloads/scripts
+ls
+```
+
 > count 'em!
 
 <details>
@@ -137,24 +142,39 @@ Do work through the examples, creating the example DataApp - you'll need it late
 
 Here's a summary of the steps from creation to event boundaries.
 
+```bash
+/opt/splunk/bin/splunk/start # Start Splunk from a root shell
+```
 > In the Splunk interface home click on the cog wheel near Apps as directed
 > Name the app DataApp (to follow the example) and give some random values for name
 > After saving your new app click Launch in the actions column
 > From your root shell prompt navigate to:
-> /opt/splunk/etc/apps/DataApp/default
-> vim inputs.conf (or whatever editor you prefer)
+
+```bash
+cd /opt/splunk/etc/apps/DataApp/default
+vim inputs.conf # (or whatever editor you prefer)
+
 > i for insert mode, and copy the 4 lines of code that will check the vpnlogs
 > escape to exit insert mode
 > :wq - save and quit
-> mv /home/ubuntu/Downloads/scripts/vpnlogs ../bin/ # copy the scrip to the apps bin directory
-> /opt/splunk/bin/splunk restart # restart Splunk # Give it a couple of minutes before trying to access in the browser
+```bash
+mv /home/ubuntu/Downloads/scripts/vpnlogs ../bin/ # copy the scrip to the apps bin directory
+/opt/splunk/bin/splunk restart # restart Splunk # Give it a couple of minutes before trying to access in the browser
+```
+
 > search: index=main sourcetype=vpnlogs and set Time setting - All time (real-time)
 
 Okay we have logs coming in but there seem to be multiple data points in each log. We need to establish event boundaries. We do this from a props.conf file.
 
-> vim props.conf (or your preferred editor)
-> i for insert mode and copy the 3 lines of code given in the task instructions
-> /opt/splunk/bin/splunk restart # restart Splunk again
+```bash 
+vim props.conf (or your preferred editor)
+```
+
+> Copy the 3 lines of code given in the task instructions
+
+```bash
+/opt/splunk/bin/splunk restart # restart Splunk again
+```
 
 You should see the logs comming in nicely formatted now.
 
