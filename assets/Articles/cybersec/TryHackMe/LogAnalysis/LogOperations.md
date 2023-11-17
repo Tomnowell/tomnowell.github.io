@@ -6,9 +6,13 @@
 
 ### Introduction
 
+Here we'll take a look at the Tryhackme room [Log Operations](https://tryhackme.com/room/logoperations)
+
 I thought this room would be a breeze. The last one was a bit of a challenge, but this one has no deployable VMs and no files to download. However, this lack of practical aspect means that this room is one of the heaviest in information density and it's too easy to skip over bits without letting them sink in properly. So I will do my best to actually comment on the room and thus, hopefully, consolidate my understanding and hopefully give some added value to anyone reading this.
 
 We're introduced to the needle and haystack metaphor again. It's probably quite a good one however cliche it may sound, but let's extend it a little, just for fun. It's good to have some idea whether the needle you're looking for may be ferrous, in which case a magnet might be helpful. Also, you might want to wear gloves and something with long sleeves if you're going to be sifting through hay all day - stuff gets itchy. Also, you're not going to want to knock the stack over and leave it in a messy pile when you're done. So leaving our metaphor and returning to our literals take care to follow policy on log collection and consolidation and sanitization. Not really sure if that is applicable to this room - I just enjoyed playing with the metaphor - other things happen in haystacks apart from needles getting lost - so use protection.
+
+---
 
 ### Task 2: Log Configuration
 
@@ -39,6 +43,8 @@ Here we are asked to think about (or discuss with a team) what the purpose of th
 
 </details>
 
+---
+
 ### Task 3: Where to Start After Deciding the Logging Purpose
 
 Here we are presented with some guiding questions that we might use in a meeting to decide our logging strategy. The first question is the *what* this is highly influenced by the purpose as discussed previously.
@@ -56,6 +62,8 @@ Most questions relate to the *how*. How much will (needs to be) logged? - This l
     How much do you need to log?
 
 </details>
+
+---
 
 ### Task 4: Configuration Dilemma: Planning and Implementation
 
@@ -75,6 +83,7 @@ Base requirements lay out the data that must be logged to meet operational, secu
 
 </details>
 
+---
 
 ### Task 5: Principles and Difficulties
 
@@ -110,12 +119,13 @@ While I don't want to copy the info in the room the final point seems relevant t
 
 </details>
 
+---
 
 ### Common Mistakes and Best Practices
 
 In almost all situations within a professional environment it is good to be aware of and knowledgeable about best practice. While it is important to learn from one's own mistakes a true master learns from the mistakes of others and doesn't make them themself in the first place *ancient Japanese proverb*.
 
-*Q1: As a consultant, you are doing a comprehensive risk assessment and noticed that one of the development teams implemented a custom script to generate logs for an old system, which omits loggings at some phases. What you would call this? (Mistake or Practice?)*
+*Q1: As a consultant, you are doing a comprehensive risk assessment and noticed that one of the development teams implemented a custom script to generate logs for an old system which omits loggings at some phases. What would you call this? (Mistake or Practice?)*
 
 > It's not directly obvious which this is. If the omissions were planned then it may not be a problem to omit some phases from the logs. However the use of the word 'omit' rather than 'exclude' makes it sound like this is not the intended outcome. You could also just count the number of letters the answer requires.
 
@@ -126,6 +136,8 @@ In almost all situations within a professional environment it is good to be awar
     mistake
 
 </details>
+
+---
 
 ### Conclusion
 
