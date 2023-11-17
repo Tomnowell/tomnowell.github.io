@@ -28,7 +28,7 @@ It's a Python based tool and is also available via pip.
 pip install --user tmuxp
 ```
 
-Follow (their instructions)[https://tmuxp.git-pull.com/quickstart.html] for yum or brew
+Follow [their instructions](https://tmuxp.git-pull.com/quickstart.html) for yum or brew
 
 ---
 
@@ -84,4 +84,4 @@ windows:
     window_name: window
 ```
 
-That's it for now. If I modify anything considerably in the future I will write more on it. If you have any suggestions or want to tell me I'm wrong then do contact me - I always want to learn more. Happy multiplexing!
+That's it for now. I realise this is a very brief look at tmuxp. Sorry if you wanted more. If I modify anything considerably in the future I will write more on it. If you have any suggestions or want to tell me where I have gone wrong, then do contact me - I always want to learn more. Happy multiplexing!

@@ -6,7 +6,7 @@
 
 ### Introduction
 
-Here we're going to walk through the TryHackMe room (Splunk: Data Manipulation)[https://tryhackme.com/room/splunkdatamanipulation]. Part of the Advanced Splunk module on the SOC Level 2 learning path.
+Here we're going to walk through the TryHackMe room [Splunk: Data Manipulation](https://tryhackme.com/room/splunkdatamanipulation). Part of the Advanced Splunk module on the SOC Level 2 learning path.
 
 We're expected to already have knowledge of regex and Splunk basics.
 
@@ -22,7 +22,6 @@ From the machines terminal in split screen browser:
 sudo passwd ubuntu # Enter a new password when prompted
 ```
 
-
 We can now ssh in from our machine over the VPN using:
 
 ```bash
@@ -33,7 +32,7 @@ sudo su # Elevate to root when ssh connected
 
 *Q1: Connect to the Lab.*
 
-> NO answer needed
+> No answer needed
 
 *Q2: How many Python scripts are present in the ~/Downloads/scripts directory?*
 
@@ -45,11 +44,8 @@ ls
 > count 'em!
 
 <details>
-
-  <summary>Spoiler warning: Answer</summary>
-    
+    <summary>Spoiler warning: Answer</summary>
     3
-
 </details>
 
 ### Task 3 - Splunk Data Processing: Overview
@@ -153,10 +149,11 @@ Here's a summary of the steps from creation to event boundaries.
 ```bash
 cd /opt/splunk/etc/apps/DataApp/default
 vim inputs.conf # (or whatever editor you prefer)
+```
 
-> i for insert mode, and copy the 4 lines of code that will check the vpnlogs
-> escape to exit insert mode
+> Copy the 4 lines of code that will check the vpnlogs
 > :wq - save and quit
+
 ```bash
 mv /home/ubuntu/Downloads/scripts/vpnlogs ../bin/ # copy the scrip to the apps bin directory
 /opt/splunk/bin/splunk restart # restart Splunk # Give it a couple of minutes before trying to access in the browser

@@ -22,8 +22,9 @@ However you choose to connect the login credentials for damianhall are on this p
 
 *Q1:  What is the name of your colleague who left a note on the Desktop?*
 
-> cat Desktop/note.txt (or open in the GUI) 
-
+```bash
+cat Desktop/note.txt (or open in the GUI) 
+```
 <details>
 
   <summary>Spoiler warning: Answer</summary>
@@ -102,7 +103,9 @@ Go through the exercises and configure rsyslog.
 
 *Q2 What is the IP address of SIEM-02 based on the rsyslog configuration file /etc/rsyslog.d/99-websrv-02-cron.conf, which is used to monitor cron messages?*
 
-> cat /etc/rsyslog.d/99-websrv-02-cron.conf
+```bash
+ cat /etc/rsyslog.d/99-websrv-02-cron.conf
+```
 
 <details>
 
@@ -115,8 +118,9 @@ Go through the exercises and configure rsyslog.
 ---
 
 *Based on the generated logs in /var/log/websrv-02/rsyslog_cron.log, what command is being executed by the root user?*
-
-> cat /var/log/websrv-02/rsyslog_cron.log | grep -E 'root|CMD'
+```bash
+cat /var/log/websrv-02/rsyslog_cron.log | grep -E 'root|CMD'
+```
 
 <details>
 
@@ -136,7 +140,10 @@ Follow the practical activity to automate log rotation.
 
 *Q1: Based on the logrotate configuration /etc/logrotate.d/99-websrv-02_cron.conf, how many versions of old compressed log file copies will be kept?*
 
-> cat /etc/logrotate.d/99-websrv-02_cron.conf - if you followed the practical activity it should be pretty clear. 
+```bash
+cat /etc/logrotate.d/99-websrv-02_cron.conf
+```
+>if you followed the practical activity it should be pretty clear.
 
 <details>
 
