@@ -14,7 +14,7 @@ We're expected to already have knowledge of regex and Splunk basics.
 
 We are John.
 
-Here we can start the machine. Unfortunately we're not given login credentials. looking at the /etc/shadow file it looks like the ubuntu user is not able to authenticate with a password (it's hash is preceeded by a ! symbol). I reset the ubuntu user password and sshed in anyway.
+Here we can start the machine. Unfortunately we're not given login credentials. looking at the /etc/shadow file it looks like the ubuntu user is not able to authenticate with a password (it's hash is preceded by a ! symbol). I reset the ubuntu user password and sshed in anyway.
 
 From the machines terminal in split screen browser:
 
@@ -139,7 +139,7 @@ Do work through the examples, creating the example DataApp - you'll need it late
 Here's a summary of the steps from creation to event boundaries.
 
 ```bash
-/opt/splunk/bin/splunk/start # Start Splunk from a root shell
+/opt/splunk/bin/splunk start # Start Splunk from a root shell
 ```
 > In the Splunk interface home click on the cog wheel near Apps as directed
 > Name the app DataApp (to follow the example) and give some random values for name
