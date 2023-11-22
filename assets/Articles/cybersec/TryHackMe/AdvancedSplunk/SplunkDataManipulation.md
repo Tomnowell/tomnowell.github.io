@@ -1,6 +1,6 @@
 # Splunk: Data Manipulation
 
-## Learn How to Parse and Manipulate data in Splunk
+## Learn How to Parse and Manipulate Data in Splunk
 
 ## SOC Level 2 Learning Pathway
 
@@ -14,7 +14,11 @@ We're expected to already have knowledge of regex and Splunk basics.
 
 We are John.
 
-Here we can start the machine. Unfortunately we're not given login credentials. looking at the /etc/shadow file it looks like the ubuntu user is not able to authenticate with a password (it's hash is preceded by a ! symbol). I reset the ubuntu user password and sshed in anyway.
+Here we can start the machine. Unfortunately we're not given login credentials. looking at the /etc/shadow file it looks like the ubuntu user is not able to authenticate with a password (it's sha512 hash preceded by a ! symbol).  
+
+*Q1: Connect to the Lab.*
+
+If you do want to connect via ssh then you can follow my method here. Let me know if you have another way in! I reset the ubuntu user password and sshed in with the new password.
 
 From the machines terminal in split screen browser:
 
@@ -27,12 +31,12 @@ We can now ssh in from our machine over the VPN using:
 ```bash
 ssh ubuntu@VM_IP_ADDRESS # enter our new password when prompted
 
-sudo su # Elevate to root when ssh connected
+sudo su # Elevate to root when ssh is connected
 ```
 
-*Q1: Connect to the Lab.*
-
 > No answer needed
+
+---
 
 *Q2: How many Python scripts are present in the ~/Downloads/scripts directory?*
 
@@ -41,12 +45,19 @@ cd Downloads/scripts
 ls
 ```
 
-> count 'em!
+> count 'em!  
 
 <details>
     <summary>Spoiler warning: Answer</summary>
     3
 </details>
+
+Just a quick note here. We'll need these scripts later on so let's copy them to the splunk scripts directory now
+```bash
+cp -a /home/ubuntu/scripts/ /opt/splunk/etc/apps/DataApp/bin/ # -a preserves file attributes
+```
+
+---
 
 ### Task 3 - Splunk Data Processing: Overview
 
@@ -56,13 +67,15 @@ Some reading to do. Don't skip it!
 
 > No answer needed
 
+---
+
 ### Task 4 - Exploring Splunk Configuration Files
 
 More reading about config files and stanzas. Stanzas are how individual data points are expressed, processed and indexed within Splunk.
 
 *Q1: Which stanza is used in the configuration files to break the events after the provided pattern?*
 
-> Break and after give us a good hint here
+> 'Break' and 'after' give us a good hint here.
 
 <details>
 
@@ -141,10 +154,11 @@ Here's a summary of the steps from creation to event boundaries.
 ```bash
 /opt/splunk/bin/splunk start # Start Splunk from a root shell
 ```
-> In the Splunk interface home click on the cog wheel near Apps as directed
-> Name the app DataApp (to follow the example) and give some random values for name
-> After saving your new app click Launch in the actions column
-> From your root shell prompt navigate to:
+
+> In the Splunk interface home click on the cog wheel near Apps as directed  
+> Name the app DataApp (to follow the example) and give some random values for name  
+> After saving your new app click Launch in the actions column  
+> From your root shell prompt navigate to:  
 
 ```bash
 cd /opt/splunk/etc/apps/DataApp/default
@@ -302,7 +316,123 @@ But sometimes sensitive data is a matter of standards compliance or even legal c
 
 ### Task 9 - Extracting Custom Fields
 
-We're going to do some exercises that practice step 4 that was introduced in Task 3. In particular, we will specify our own sourcetypes for our data.
+There seems to be a typo where we are instructed to create a fields.conf file. However, at one point this is referred to as 'Fields.conf'. I think the lowercase version should be used if only to keep consistency with other conf file naming used in these examples.
+
+To answer the questions in this task we're going to need to apply what we learned to extract fields from the purchase logs.
+
+This task took me quite a while to get through because I kept getting pulled away to do other things just when I got the machine set up. I'll assume that anyone following this is also starting this task from a newly spawned VM. So, from the newly started bare machine.
+
+In the terminal:
+
+```bash
+sudo su
+/opt/splunk/bin/splunk start
+```
+
+> In the browser:  
+> Navigate to http://MACHINE_IP:8000  
+> Create the DataApp  
+> Launch the DataApp  
+
+Back in the terminal as root:
+
+```bash
+cp -a /home/ubuntu/Downloads/scripts/. /opt/splunk/etc/apps/DataApp/bin/
+
+cd /opt/splunk/etc/apps/DataApp/default 
+```
+
+Write the inputs.conf file:
+
+```bash
+echo -e "[script:///opt/splunk/etc/apps/DataApp/bin/purchase-details]
+interval = 5
+index = main
+source = purchase_logs
+sourcetype= purchase_logs
+host = order_server" > inputs.conf
+```
+
+Write the props.conf file:
+
+```bash
+echo -e "[purchase_logs]
+SHOWLD_LINEMERGE=true
+MUST_BREAK_AFTER = \d{4}\.
+TRANSFORM-purchase = purchase_custom_fields" > props.conf
+```
+
+Write the transforms.conf file:
+
+```bash
+echo -e "[purchase_custom_fields]
+REGEX = User\s([\w\s]+).(made a purchase with credit card).(\d{4}-\d{4}-\d{4}-\d{4}).
+FORMAT = Username::$1 Message::$2 CardNumber::$3
+WRITE_META = true" > transforms.conf
+```
+
+Write the fields.conf file:
+
+```bash
+echo -e "[Username]
+INDEXED = true
+
+[Message]
+INDEXED = true
+
+[CardNumber]
+INDEXED = true" > fields.conf
+```
+
+Restart splunk:
+
+```bash
+/opt/splunk/bin/splunk restart
+```
+
+As you can see I only added the purchase_logs sourcetype for this task in the inputs.conf file.  In the props.conf file I defined the section to look for in the transforms.conf file. In the transforms.conf file we define the regex to separate the fields. I realise specifically matching the message string is probably not going to be reliable in a real situation if there are multiple payment methods, but it works for our tasks here. In the transforms.conf file we also define the format of the data specifying how the strings are ordered. Finally the fields.conf file we set every field defined in transforms.conf to be indexed. Finally we restart Splunk.
+
+*Q1: Create a regex pattern to extract all three fields from the VPN logs.*
+
+> No Answer Required - The regex is defined earlier in the task materials.
+
+*Q2 Extract the Username field from the sourcetype purchase_logs we worked on earlier. How many Users were returned in the Username field after extraction?*
+
+> If you have followed the steps above you should be ready to go.  
+> In Splunk, search:  
+> index-main sourcetype="purchase_logs"  
+> The number of Usernames appears in the interesting fields section on the left side.  
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+    
+    14
+
+</details>
+
+---
+
+*Q2: Extract Credit-Card values from the sourcetype purchase_logs, how many unique credit card numbers are returned against the Credit-Card field?*
+
+> Again, the number of unique values appears in the interesting fields section on the left side.
+
+<details>
+
+  <summary>Spoiler warning: Answer</summary>
+    
+    16
+
+</details>
+
+---
+
+### Recap and Conclusion
+
+I kept getting pulled away in this room so it took a while to get through it. But it was a great learning tool and I feel much more comfortable to configure Splunk to ingest new and different data sources, creating detailed events with meaningful boundaries and using regular expressions to extract interesting fields. Splunk also has a built-in 'Extract New Fields' function which could be worth exploring for those who dislike creating their own regular expressions. I quite enjoy the challenge of learning regex With the help of [regex101](https://regex101.com), I find the process fun and satisfying.
+
+I might be a bit slower to upload the SOC path 2 as I'll be doing the [Advent of Cyber 2023](https://tryhackme.com/room/adventofcyber2023). But there should be enough time for a room or two over the festive season. 
+
 
 ---
 
