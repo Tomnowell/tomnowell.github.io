@@ -120,7 +120,7 @@ We can see a domain appearing again and again.
 
 ---
 
-### Q6: How many countries are captured in the logs?
+### Q6,7,8,9: How many ... are captured in the logs?
 
 To answer this question, we're going to need to extract a 'country' field from the log. Let's get to work making a regex that separates each field logically.
 
@@ -197,6 +197,4 @@ And we're ready to go!
 ```bash
 /opt/splunk/bin/splunk restart
 ```
-
-
-
+Count the countries
