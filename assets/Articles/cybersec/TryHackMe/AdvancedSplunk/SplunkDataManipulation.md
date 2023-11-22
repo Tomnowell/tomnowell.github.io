@@ -14,7 +14,7 @@ We're expected to already have knowledge of regex and Splunk basics.
 
 We are John.
 
-Here we can start the machine. Unfortunately we're not given login credentials. looking at the /etc/shadow file it looks like the ubuntu user is not able to authenticate with a password (it's sha512 hash preceded by a ! symbol).  
+Here we can start the machine. Unfortunately we're not given login credentials. looking at the /etc/shadow file it looks like the ubuntu user is not able to authenticate with a password. The ! preceding the passwords SHA512 hash denotes that this user cannot authenticate by password.  
 
 *Q1: Connect to the Lab.*
 
@@ -394,7 +394,7 @@ As you can see I only added the purchase_logs sourcetype for this task in the in
 
 *Q1: Create a regex pattern to extract all three fields from the VPN logs.*
 
-> No Answer Required - The regex is defined earlier in the task materials.
+> No answer needed - But, anyway, the regex is defined earlier in the task materials.
 
 *Q2 Extract the Username field from the sourcetype purchase_logs we worked on earlier. How many Users were returned in the Username field after extraction?*
 
@@ -429,17 +429,10 @@ As you can see I only added the purchase_logs sourcetype for this task in the in
 
 ### Recap and Conclusion
 
-I kept getting pulled away in this room so it took a while to get through it. But it was a great learning tool and I feel much more comfortable to configure Splunk to ingest new and different data sources, creating detailed events with meaningful boundaries and using regular expressions to extract interesting fields. Splunk also has a built-in 'Extract New Fields' function which could be worth exploring for those who dislike creating their own regular expressions. I quite enjoy the challenge of learning regex With the help of [regex101](https://regex101.com), I find the process fun and satisfying.
+I kept getting pulled away in this room so it took a while to get through it. But it was a great learning tool and I feel much more comfortable configuring Splunk to ingest new and different data sources, creating detailed events with meaningful event boundaries and using regular expressions to extract interesting fields. Splunk also has a built-in 'Extract New Fields' function which could be worth exploring for those who dislike creating their own regular expressions. I quite enjoy the challenge of learning regex. With the help of [regex101](https://regex101.com), I find the process fun and satisfyingd. A little like a jigsaw puzzle.
 
-I might be a bit slower to upload the SOC path 2 as I'll be doing the [Advent of Cyber 2023](https://tryhackme.com/room/adventofcyber2023). But there should be enough time for a room or two over the festive season. 
-
+I might be a bit slower to upload the SOC path 2 as I'll be doing the [Advent of Cyber 2023](https://tryhackme.com/room/adventofcyber2023). But there should be enough time for a room or two over the festive season.
 
 ---
 
-### Conclusion
-
-An interesting room. After the fuss I made about not being given credentials, I now realise we don't really need to use the machine at all until task 9. The screenshots along with the writing contain all the answers or the information you need to get the answers. I'd like to see some more challenging activities using the VM to solidify knowledge and gain a little experience not just play along at home.
-
-All in all I enjoyed it. Looks like I'll be getting my practical challenge in the next room. 
-
-Next up - Fixit
+Next up in the series - Fixit
