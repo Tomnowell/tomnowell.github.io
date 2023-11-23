@@ -104,12 +104,17 @@ I used [regex101](http://regex101.com) to come up with the answer. We need to sp
 We don't actually need to implement the props.conf file yet, but one currently doesn't exist and it would be easier to read the logs with it. Let's implement it
 
 ```bash
-"[network_logs]
+cd /opt/splunk/etc/apps/fixit/default/  
+echo -e "[network_logs]
 SHOULD_LINEMERGE = true
 BREAK_ONLY_BEFORE = \[Network-log\]" > props.conf
 ```
 
 Restart Splunk and our events should be correctly separated.
+
+```bash
+/opt/splunk/bin/splunk restart
+```
 
 We can see a domain appearing again and again.
 
