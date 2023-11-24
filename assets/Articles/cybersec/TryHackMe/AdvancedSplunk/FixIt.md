@@ -55,8 +55,7 @@ We learned where apps are installed by default in the previous room. This will a
 
 <details>
 
-  <summary>Spoiler warning: Answer</summary>
-    
+  <summary>Spoiler warning: Answer</summary> 
     /opt/splunk/etc/apps/fixit
 
 </details>
@@ -134,6 +133,7 @@ Currently we have the long string that includes a lot of information. One exampl
 > User named Patricia Allen from Custom department accessed the resource Cybertees.THM/signup.html from the source IP 192.168.1.3 and country Australia at: Wed Nov 22 05:01:31 2023
 
 From this we can reason that some useful fields to extract would be:
+
 - Username 
 - Department
 - Resource Accessed
@@ -142,6 +142,8 @@ From this we can reason that some useful fields to extract would be:
 - Date
 - Time
 - Year
+
+Note: In the task materials only 5 fields are suggested and I couldn't get my regex for all the fields I just mentioned working. I will leave it here because I'd love feedback if someone knows why it didn't work. The first 5 fields worked fine and then I was getting $5, $6 output in Splunk for the latter fields.
 
 I put the whole thing into regex101 and got to work designing a regex to separate out each value. I started with the Username mostly borrowed from the exercise in the previous room.
 
@@ -155,16 +157,31 @@ I'm sure there's a much neater way to do that, please let me know your solution!
 
 Now we have the regex let's extract those fields. I counted the colour coded fields in regex101 to do a sanity check. I extracted 8 fields in total. Should Date and Year be separate? I'm not sure exactly how to combine them. I think they should probably be joined because if one is searching for events on say, May 22nd 2022 we could just search one field. Another user might mistakenly believe that values in the Date field are already distinguished by year and end up with values from multiple years in their search. I don't think we need to do it for these questions but I've noted it for further investigation. I imagine the solution will involve using sed to adjust the string to have date and year combined and then adjusting the regular expression to capture it as one field.
 
-We can write our transforms.conf file like so:
+While the regex I created seemed to work all values from $5 (Country) on were not processed correctly. I'm not sure what was going on - probably an error in my regex or a difference in how Splunk interprets the regex. Please let me know if you can clear that up for me. I decided to focus on the fields suggested in the task ie.
+
+-Username
+-Country
+-Source_IP
+-Department 
+-Domain (Resource)
+
+Note: I think the error was due to not adding /g global tag at the end?
+So here's my new regex:
+
+```regex
+User named ([\w\s]+)\sfrom\s([\w\s]+)\sdepartment[\w\s]+resource\s([^\s]+)\sfrom[\w\s]+IP\s(\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3})\sand country\s([\w\s]+)\sat.
+```
+
+A little shorter than the last one. We can write our transforms.conf file like so:
 
 ```bash
 echo -e "[networks_custom_fields]
-REGEX = User\snamed\s([\w\s]+)\sfrom\s([\w\s]+)\sdepartment\saccessed\sthe\sresource\s([^\s]+)\sfrom\sthe\ssource\sIP\s([\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}]+)\sand\scountry\s\n([\w\s]+)\sat:\s(.{3}\s.{3}\s\d{2})\s(\d{2}:\d{2}:\d{2})\s(\d{4})
-FORMAT = Username::\$1 Department::\$2 Resource::\$3 SourceIP::\$4 Country::\$5 Date::\$6 Time::\$7  Year::\$8
+REGEX = User named ([\w\s]+)\sfrom\s([\w\s]+)\sdepartment[\w\s]+resource\s([^\s]+)\sfrom[\w\s]+IP\s(\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3})\sand country\s([\w\s]+)\sat.*
+FORMAT = Username::\$1 Department::\$2 Domain::\$3 Source_IP::\$4 Country::\$5
 WRITE_META = true" > transforms.conf
 ```
 
-Add the link in the props.conf
+Next, add the link in the props.conf
 
 ```bash
 echo "TRANSFORM-networks = networks_custom_fields" >> props.conf
@@ -178,22 +195,13 @@ INDEXED=true
 [Department]
 INDEXED=true
 
-[Resource]
+[Domain]
 INDEXED=true
 
-[SourceIP]
+[Source_IP]
 INDEXED=true
 
 [Country]
-INDEXED=true
-
-[Date]
-INDEXED=true
-
-[Time]
-INDEXED=true
-
-[Year]
 INDEXED=true" > fields.conf 
 ```
 
@@ -202,4 +210,47 @@ And we're ready to go!
 ```bash
 /opt/splunk/bin/splunk restart
 ```
-Count the countries
+
+> Count!  
+> index=main sourcetype="network_logs" |  stats dc (Country)  
+> Or just look left - the value should appear next to the field name in grey on the left hand side.
+
+> Again look left.
+
+> Left hand side or use distinct-count dc(Username) as before.
+
+### Which configuration files were used to fix our problem? [Alphabetic order: File1, file2, file3]
+
+We wrote to three files to perform the previous four questions. If you know your ABC then you will know that f comes before t which comes before p.
+
+<details>
+  <summary>Spoiler warning: Answer</summary>
+    fields.conf, transforms.conf, props.conf
+</details>
+
+### What are the TOP two countries the user Robert tried to access the domain from? [Answer in comma-separated and in Alphabetic Order][Format: Country1, Country2]?
+
+I'm sure there's an easier way to do this:
+
+> index=main sourcetype="network_logs" Username="Robert Wilson" \ top limit=0 Country | fields Country count
+> The top 2 values are the answer:
+
+<details>
+  <summary>Spoiler warning: Answer</summary>
+    Canada, United States
+</details>
+
+Let's use wildcards to search for a Domain containing the secret-document.pdf string.
+
+> index=main sourcetype="network_logs" Domain=*secret-document.pdf*
+
+<details>
+  <summary>Spoiler warning: Answer</summary>
+    Sarah Hall
+</details>
+
+### Conclusion
+
+It was really fun and educational to come up with the regular expression for this task. It's elevated my regex skills and I feel much more fluent in the regex lingo. Of course, it has also taught me a lot about Splunk and how it can be configured to extract meaningful data.
+
+That's the end of the Advanced Splunk module we are now experts...almost. Next up Elk!
