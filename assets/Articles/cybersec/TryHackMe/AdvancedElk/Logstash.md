@@ -43,8 +43,9 @@ dpkg -i elasticsearch.deb
 
 Take a note of the important information displayed after the package has installed:
 
-In my case I noted the password. Of course, your password will be different
-> The generated password for the elastic built-in superuser is : oXkDiT092YNt+=WUMmPz
+In my case I noted the password. Of course, your password will be different.
+
+The generated password for the elastic built-in superuser is : wQIjyJxn3ArG9BfE6=0a
 
 We're also instructed to note a couple of useful commands.
 
@@ -69,6 +70,7 @@ systemctl enable elasticsearch.service
 systemctl start elasticsearch.service
 systemctl status elasticsearch.service
 ```
+
 Next, we move onto configuration:
 
 ```bash
