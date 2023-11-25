@@ -45,11 +45,14 @@ Take a note of the important information displayed after the package has install
 
 In my case I noted the password. Of course, your password will be different.
 
-The generated password for the elastic built-in superuser is : wQIjyJxn3ArG9BfE6=0a
+The generated password for the elastic built-in superuser is : oSpz_0G6xYa5Al1Yya*y 
 
 We're also instructed to note a couple of useful commands.
 
 Reset the password of the elastic built-in superuser with:
+
+Here's a summary of the steps to install.
+
 
 ```bash
 /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
@@ -85,6 +88,18 @@ Edit the elasticsearch.yml file. In the network section change network.host by r
 Restart elasticsearch:
 
 ```bash
+systemctl restart elasticsearch.service
+```
+Here's a summary of the steps to install.
+
+```bash
+cd /home/tools/elasticsearch
+dpkg -i elasticsearch.deb
+systemctl daemon-reload
+systemctl enable elasticsearch.service
+systemctl start elasticsearch.service
+nano /etc/elasticsearch/elasticsearch.service
+# Edit IP Address & uncomment port
 systemctl restart elasticsearch.service
 ```
 
@@ -139,7 +154,16 @@ curl -XGET http://127.0.0.1:9200
 
 ### Task 3 - Installing Logstash
 
-
+```bash
+cd /home/tools/logstash
+dpkg -i logstash.deb
+systemctl daemon-reload
+systemctl enable logstash.service
+systemctl start logstash.service
+nano /etc/logstash/logstash.service
+# Edit IP Address & uncomment port
+systemctl restart logstash.service
+```
 *What is the configuration reload interval set by default in logstash.yml?
 3s
 What is the Logstash version we just installed?
@@ -148,3 +172,16 @@ What is the Logstash version we just installed?
 Task 5  Kibana:*
 
 ### Task 4 - Installing Kibana
+
+
+```bash
+cd /home/tools/kibana
+dpkg -i kibana.deb
+systemctl daemon-reload
+systemctl enable kibana.service
+systemctl start logstash.service
+nano /etc/logstash/logstash.service
+# Edit IP Address & uncomment port
+systemctl restart logstash.service
+```
+/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
