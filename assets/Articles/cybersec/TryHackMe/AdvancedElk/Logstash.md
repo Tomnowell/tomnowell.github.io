@@ -8,14 +8,6 @@
 
 Wow, this looks like a long room - better get started!
 
-Start the room VM and either use the Attack box or ssh in over the VPN. I chose the latter as credentials are provided and I like my terminal.
-
-We'll want to be root user so:
-
-```bash
-sudo su
-```
-
 We're going to start by installing the ELK stack. This consists of:
 
 - Elastic Search
@@ -26,9 +18,29 @@ Elasticsearch is the underlying search and analytics engine.
 
 Logstash is a server-side data processing pipeline that.
 
-Kirbana is a data visualisation tool and dashboard that provides the user interface for the elk stack.
+Kibana is a data visualisation tool and dashboard that provides the user interface for the elk stack.
 
-### Task 2 - Installing Elasticsearch
+*Q1: Move to the next task.*
+
+> No answer needed  
+
+### Task 2 - Connect with the Lab
+
+Start the room VM and either use the Attack box or ssh in over the VPN. I chose the latter as credentials are provided and I like my terminal.
+
+We'll want to be root user so:
+
+```bash
+sudo su
+```
+
+Note: We only really need the VM for task 3, 4 and 5. But they follow on from one another, so it's best to at least get that far in one attempt. If your VM isn't a snail then you should be okay. Recently I've had some machines that grind along like a sloth in slow-mo. I found certain times of day are better than others and changing VPN locations hasn't helped. I guess that THM have some maximum spend setting on AWS so busy times result in slow machines. It's difficult to tell.
+
+*Q1: Connect with the Lab*
+
+> No answer needed.
+
+### Task 3 - Elasticsearch Installation and Configuration
 
 We start off installing Elasticsearch.
 
@@ -52,7 +64,6 @@ We're also instructed to note a couple of useful commands.
 Reset the password of the elastic built-in superuser with:
 
 Here's a summary of the steps to install.
-
 
 ```bash
 /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
@@ -111,17 +122,15 @@ systemctl restart elasticsearch.service
 
   <summary>Spoiler warning: Answer</summary>
 
-    9200
+  9200
 
 </details>
 
+---
+
 *Q2: What version of Elasticsearch we have installed in this task?*
 
-> This is shown at installation. Once your elasticsearch is up and running on localhost you can use the following command to get the front page info.
-
-```bash
-curl -XGET http://127.0.0.1:9200
-```
+> This is shown at installation.
 
 <details>
 
@@ -131,15 +140,21 @@ curl -XGET http://127.0.0.1:9200
 
 </details>
 
+*Q3: What is the command used to check the status of Elasticsearch service?*
+
 > This is actually given in the task info.
 
 <details>
 
   <summary>Spoiler warning: Answer</summary>
 
-    systemctl status elasticsearch.service
+  systemctl status elasticsearch.service
 
 </details>
+
+---
+
+*Q4: What is the default value of the network.host variable found in the elasticsearch.yml file?*
 
 > This is the value that was in the elasticsearch.yml file before you replaced the IPv4 address with 127.0.0.1
 
@@ -147,12 +162,13 @@ curl -XGET http://127.0.0.1:9200
 
   <summary>Spoiler warning: Answer</summary>
 
-    192.168.0.1
+  192.168.0.1
 
 </details>
 
+---
 
-### Task 3 - Installing Logstash
+### Task 4 - Logstash: Installation and Configuration
 
 We're told to follow these steps.
 
@@ -175,9 +191,11 @@ systemctl restart logstash.service
 
   <summary>Spoiler warning: Answer</summary>
 
-    3s
+  3s
 
 </details>
+
+---
 
 *Q2: What is the Logstash version we just installed?*
 
@@ -191,8 +209,9 @@ systemctl restart logstash.service
 
 </details>
 
+---
 
-### Task 4 - Installing Kibana
+### Task 5 - Kibana: Installation and Configuration
 
 The installation instructions for kibana from the downloaded .deb package.
 
@@ -206,8 +225,9 @@ nano /etc/kibana/kibana.yml
 # Edit IP Address & uncomment port
 systemctl restart kibana.service
 /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
-# Note the encrollment token for login
+# Note the enrollment token for login
 ```
+
 Navigate to the given address to log in to the system with a browser connected to the THM network.
 
 *Q1: What is the default port Kibana runs on?*
@@ -218,9 +238,11 @@ Navigate to the given address to log in to the system with a browser connected t
 
   <summary>Spoiler warning: Answer</summary>
 
-    5601
+  5601
 
 </details>
+
+---
 
 *Q2: How many files are found in /etc/kibana/ directory?*
 
@@ -230,7 +252,7 @@ Navigate to the given address to log in to the system with a browser connected t
 
   <summary>Spoiler warning: Answer</summary>
 
-    3
+  3
 
 </details>
 
@@ -238,7 +260,9 @@ Navigate to the given address to log in to the system with a browser connected t
 
 > No answer needed.
 
-That's it for the VM. Hopefully you were able to get through it. Sometimes the VM does seem to run really slow. I find certain times of day seem to be better than others. I wonder whether THM are restricting their total costs at the peak times.
+---
+
+That's it for the VM. Hopefully you were able to get through it.
 
 ### Task 6 - Logstash Overview
 
@@ -252,9 +276,11 @@ We're basically be lead through an overview of Logstash.
 
   <summary>Spoiler warning: Answer</summary>
 
-    mutate
+  mutate
 
 </details>
+
+---
 
 *Q2: Which plugin can be used to drop events based on certain conditions?*
 
@@ -264,9 +290,11 @@ We're basically be lead through an overview of Logstash.
 
   <summary>Spoiler warning: Answer</summary>
 
-    drop
+  drop
 
 </details>
+
+---
 
 *Q3: Which plugin parses unstructured log data using custom patterns?*
 
@@ -276,9 +304,11 @@ We're basically be lead through an overview of Logstash.
 
   <summary>Spoiler warning: Answer</summary>
 
-    Grok
+  Grok
 
 </details>
+
+---
 
 ### Task 7 - Writing Configurations
 
@@ -292,9 +322,11 @@ We are lead around the Logstash manual for this one.
 
   <summary>Spoiler warning: Answer</summary>
 
-    nay
+  nay
 
 </details>
+
+---
 
 *Q2: Look at the file input plugin documentation; which field is required in the configuration?*
 
@@ -304,9 +336,11 @@ We are lead around the Logstash manual for this one.
 
   <summary>Spoiler warning: Answer</summary>
 
-    path
+  path
 
 </details>
+
+---
 
 *Q3: Look at the filter documentation for CSV; what is the third field option mentioned?*
 
@@ -316,9 +350,11 @@ We are lead around the Logstash manual for this one.
 
   <summary>Spoiler warning: Answer</summary>
 
-    columns
+  columns
 
 </details>
+
+---
 
 *Q4: Which output plugin is used in the above example?*
 
@@ -328,7 +364,7 @@ We are lead around the Logstash manual for this one.
 
   <summary>Spoiler warning: Answer</summary>
 
-    elasticsearch
+  elasticsearch
 
 </details>
 
@@ -340,11 +376,11 @@ Here the focus is on the input section of the configuration file.
 
 > The protocol being read is in the question.
 
-#<details>
+<details>
 
   <summary>Spoiler warning: Answer</summary>
 
-    TCP
+  TCP
 
 </details>
 
@@ -358,7 +394,7 @@ Here the focus is on the input section of the configuration file.
 
   <summary>Spoiler warning: Answer</summary>
 
-    CSV
+  CSV
 
 </details>
 
@@ -376,9 +412,11 @@ Next we look at filtering.
 
   <summary>Spoiler warning: Answer</summary>
 
-    prune
+  prune
 
 </details>
+
+---
 
 *Q2: Which filter plugin is used to rename, replace, and modify event fields?*
 
@@ -388,9 +426,11 @@ Next we look at filtering.
 
   <summary>Spoiler warning: Answer</summary>
 
-    mutate
+ mutate
 
 </details>
+
+---
 
 *Q2: Add plugin Name to rename the field 'src_ip' to 'source_ip.' And the fixed third line.*
 
@@ -413,13 +453,15 @@ filter
 
   <summary>Spoiler warning: Answer</summary>
 
-    rename { "src_ip" => "source_ip" }
+  rename { "src_ip" => "source_ip" }
 
 </details>
 
+---
 
 ### Task 10 - Logstash: Output Configurations
 
+Let's look at output plugins and configuration.
 
 *Q1: Can we use multiple output plugins at the same time in order to send data to multiple destinations? (yay / nay):*
 
@@ -427,9 +469,11 @@ filter
 
   <summary>Spoiler warning: Answer</summary>
 
-    yay
+  yay
 
 </details>
+
+---
 
 *Which Logstash output plugin is used to print events to the console?*
 
@@ -437,11 +481,14 @@ filter
 
   <summary>Spoiler warning: Answer</summary>
 
-    stdout
+  stdout
 
 </details>
 
+---
+
 *Update the following configuration to send the event to the Syslog server.*
+
 ```yaml
 output {
   plugin {
@@ -451,13 +498,13 @@ output {
 }
 ```
 
-> I wasn't very confident that this answer was correct, but it seems to work. 
+> I wasn't very confident that this answer was correct, but it seems to work.
 
 <details>
 
   <summary>Spoiler warning: Answer</summary>
 
-    syslog,host,port
+  syslog,host,port
 
 </details>
 
@@ -475,7 +522,7 @@ Finally we look at how to run configurations.
 
   <summary>Spoiler warning: Answer</summary>
 
-    logstash -f logstash.conf
+  logstash -f logstash.conf
 
 </details>
 
@@ -492,6 +539,7 @@ output{
   output_plugin{}
 }
 ```
+
 *Answer format: input_plugin,filter_plugin,output_plugin*
 
 > Console in is often referred to as stdin and console output is stdout as we saw earlier. In the middle of the pipeline we need a plugin that handles comma separated values.
@@ -500,16 +548,16 @@ output{
 
   <summary>Spoiler warning: Answer</summary>
 
-    stdin,csv,stdout
+  stdin,csv,stdout
 
 </details>
 
 ### Task 12 - Exercise and Conclusion
 
-That looked like quite a lot of work at the start but the latter tasks were quite light and didn't involve using the VM at all. 
+That looked like quite a lot of work at the start but the latter tasks were quite light and didn't involve using the VM at all.
 
 We're given a small exercise to do using logstash configuration which is useful to solidify learning but not required to answer any questions.
 
 I'd like to have a bit more practice using logstash - but there's a lot to take in and perhaps we don't need to be intimately familiar at this stage.
 
-Next up Custom Alert Rules in Wazuh! 
+Next up Custom Alert Rules in Wazuh!
