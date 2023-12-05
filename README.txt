@@ -1,12 +1,8 @@
 Credits:
 
 	Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
+		Photos - Me
+		Cartoons - Microsoft Bing Image Generator
 
 	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+		Built using jekyll with modified Minima theme.
