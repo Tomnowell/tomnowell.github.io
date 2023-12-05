@@ -231,4 +231,4 @@ Again follow the url (not the link) in your browser (connected to the THM networ
 
 I learned *a lot* from this room. And it has already started me off exploring the powerful awk and sed programs. 
 
-Next: [Log Operations](/THM-Log-Operations/)
+Next: [Log Operations](https://tomnowell.github.io/THM-Log-Operations/)

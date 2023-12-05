@@ -343,4 +343,4 @@ In this task, we are introduced to the tool, Sigma. It uses Yara rules to find i
 
 Well that was quite a bit of work. It took me a few days to fit in around my full time job. But it was worth it. Lots of ways to explore logs and some idea of what to look for.
 
-Next: [Splunk: Exploring SPL](/THM-Splunk-Exploring-SPL/)
+Next: [Splunk: Exploring SPL](https://tomnowell.github.io/THM-Splunk-Exploring-SPL/)

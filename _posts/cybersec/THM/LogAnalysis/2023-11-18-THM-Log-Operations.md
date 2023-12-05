@@ -142,4 +142,4 @@ In almost all situations within a professional environment it is good to be awar
 
 I thought this room might be a bit light on substance due to no VM or separate activity. After completing it I found it's changed how I think about logging, why it's done, how it's done, and how it might be improved to address different goals.  
 
-Next: [Intro to Log Analysis](/THM-Intro-To-Log-Analysis/).
+Next: [Intro to Log Analysis](https://tomnowell.github.io/THM-Intro-To-Log-Analysis/).
