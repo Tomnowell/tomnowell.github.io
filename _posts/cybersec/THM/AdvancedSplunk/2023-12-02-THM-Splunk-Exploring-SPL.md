@@ -25,7 +25,7 @@ Processing queries using a specified language reduces human error and ensures re
 
 You can interact with this room's machine directly from the browser by following the provided link. Of course you can connect through the vpn or attackbox if you prefer.
 
-It's worth noting that the machine is painfully slow - maybe grab a coffee when you're actually getting it to do anything!
+It's worth noting that the machine can be painfully slow - maybe grab a coffee when you're actually getting it to do anything!
 
 ---
 
