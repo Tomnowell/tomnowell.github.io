@@ -205,9 +205,9 @@ You might want to reduce the number of events you're viewing at one time. Or you
 
 ---
 
-**Q1: Using the Reverse command with the search query index=windowslogs | table _time EventID Hostname SourceName - what is the HostName that comes on top?**
+**Q1: Using the Reverse command with the search query index=windowslogs \| table _time EventID Hostname SourceName - what is the HostName that comes on top?**
 
-*just pipe the given search string to reverse:*
+*Pipe the given search string to reverse:*
 
 ```index=windowslogs | table _time EventID Hostname SourceName | reverse```
 
