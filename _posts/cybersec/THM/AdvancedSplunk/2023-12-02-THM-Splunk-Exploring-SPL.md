@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "TryHackMe - Splunk: Exploring SPL "
+title:  "TryHackMe - Splunk: Exploring SPL"
 date:   2023-12-02 00:00:00 +0900
 categories: [Splunk]
+comments: true
 ---
 
 ##### Learn and explore the basics of the Search Processing Language

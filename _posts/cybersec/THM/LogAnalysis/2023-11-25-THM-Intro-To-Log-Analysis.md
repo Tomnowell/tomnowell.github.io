@@ -3,6 +3,7 @@ layout: post
 title:  "TryHackMe - Intro to Log Analysis"
 date:   2023-11-25 00:00:00 +0900
 categories: [Logging]
+comments: true
 ---
 
 ##### An intro to log analysis, best practices, and essential tools for effective detection and response

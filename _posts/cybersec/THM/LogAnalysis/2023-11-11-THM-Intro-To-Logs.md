@@ -3,6 +3,7 @@ layout: post
 title:  "TryHackMe - Intro To Logs"
 date:   2023-11-11 00:00:00 +0900
 categories: [Logging]
+comments: true
 ---
 
 ##### Learn the fundamentals of logging, data sources, collection methods and principles to step into the log analysis world

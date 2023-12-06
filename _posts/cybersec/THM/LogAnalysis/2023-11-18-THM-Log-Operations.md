@@ -3,6 +3,7 @@ layout: post
 title:  "TryHackMe - Log Operations"
 date:   2023-11-18 00:00:00 +0900
 categories: [Logging]
+comments: true
 ---
 
 ##### Learn the operation process details
