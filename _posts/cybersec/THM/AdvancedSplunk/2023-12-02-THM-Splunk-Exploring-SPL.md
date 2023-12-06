@@ -15,9 +15,7 @@ categories: [Splunk]
 
 ### Introduction
 
-We met Splunk back on the SOC 1 path. [In this room](https://tryhackme.com/room/splunkexploringspl) we focus on SPL, the Search Processing Language.
-
-Processing queries using a specified language reduces human error and ensures repeatability and allows processes to be documented and automated.
+We met Splunk back on the SOC 1 path. [In this room](https://tryhackme.com/room/splunkexploringspl) we focus on SPL, the Search Processing Language.  Processing queries using a specified language reduces human error and ensures repeatability and allows processes to be documented and automated. Basically, it's a good idea to specify in code and automate anything that we do more than once.
 
 ---
 
