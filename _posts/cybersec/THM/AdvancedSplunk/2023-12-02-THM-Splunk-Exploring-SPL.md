@@ -88,9 +88,7 @@ Still learning our way around the interface.
 
 ### Task 4: Splunk Processing Language Overview
 
-I'm a little confused is it search processing language or Splunk processing language. There are so many acronyms it's difficult to keep track of them all. Or is it SSPL, SPlunk Search Processing Language? 
-
-Operators within the language will look familiar to anyone who has done any coding and boolean logic operators are written in capitals in English (rather than in a logic notation). And is AND not && or ^. Or is OR not || or V as is sometimes the case in other languages.
+I'm a little confused is it search processing language or Splunk processing language. There are so many acronyms it's difficult to keep track of them all. Or is it SSPL, SPlunk Search Processing Language?
 
 Wildcards in strings are handled like in regexes with an asterisk.
 
@@ -125,11 +123,8 @@ Wildcards in strings are handled like in regexes with an asterisk.
 *This is too easy, they even give you the search term. Just search it and find the SourceIP in the Interesting Fields section on the left hand side. There are two entries. The answer has 17 counts...*
 
 <details>
-
   <summary>Spoiler warning: Answer</summary>
-    
-    172.90.12.11
-
+  172.90.12.11
 </details>
 
 ---
@@ -151,20 +146,20 @@ Wildcards in strings are handled like in regexes with an asterisk.
 
 <details>
   <summary>Spoiler warning: Answer</summary>
-    12256
+  12256
 </details>
 
 ---
 
 ### Task 5: Filtering the Results in SPL
 
-_fields_
+#### fields
 Here we learn how to specify the fields we wish to select within the SPL. We can pipe from the search query term using the | character like in most shells. Fields are added with a + and removed with a -
-
 
 ```index=windowlogs | field + SourceIP + DestAddress - sourcetype```
 
-_search_
+#### search
+
 We can use the pipe and the command search to look for raw text in piped results. For example in the last task we searched for the term cyber and cyber* after specifying the index. This worked, but in a larger search it may be more clear to specify.
 
 ```index=windowlogs | search cyber```
@@ -173,11 +168,11 @@ or
 
 ```index=windowlogs | search cyber```
 
-_dedup_
+#### dedup
 
 Removes duplicate fields from search results.
 
-_rename_
+#### rename
 
 ```rename field as new_field```
 
@@ -212,7 +207,7 @@ You might want to reduce the number of events you're viewing at one time. Or you
 
 **Q1: Using the Reverse command with the search query index=windowslogs | table _time EventID Hostname SourceName - what is the HostName that comes on top?**
 
-*just pipe the given search string to reverse: The Godfather of Soul is in there somewhere.*
+*just pipe the given search string to reverse:*
 
 ```index=windowslogs | table _time EventID Hostname SourceName | reverse```
 
