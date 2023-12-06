@@ -7,6 +7,11 @@ categories: [Splunk]
 
 ##### Explore Splunk Beyond Basics
 
+---
+
+<div> <img src="/images/splunk2.jpeg" alt="Computer tech cartoon" /> </div>
+
+---
 ### Introduction
 
 This sounds fun. We get to install Splunk and set it up on a Linux box and a Windows box! Let's get started!
