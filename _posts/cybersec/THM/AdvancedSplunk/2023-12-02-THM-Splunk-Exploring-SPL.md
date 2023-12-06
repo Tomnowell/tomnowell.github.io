@@ -301,4 +301,4 @@ SPL seems pretty intuitive and the Splunk interface is very clean and also intui
 
 Anyway, I really enjoyed this room. See you next time!
 
-Next: Splunk: Setting Up A SOC Lab. *(coming soon)*
+Next: [Splunk: Setting Up A SOC Lab](https://tomnowell.github.io/THM-Splunk-Setting-Up-A-SOC-Lab/)
