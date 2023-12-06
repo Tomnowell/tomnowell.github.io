@@ -75,9 +75,9 @@ Still learning our way around the interface.
 
 ---
 
-**Q3: umm**
+**Q3: How many events are returned when we apply the time filter to display events on 04/15/2022 and Time from 08:05 AM to 08:06 AM?**
 
-*To the right of the search bar is a dropdown that allows us to filter by date or time. Hopefully you already have set it to 'all time'. Now we can use it to specify a 'Date time range'. Select this option and set the date as April 15th 2022 for both start and end. Set the start time to 08:05:00.000 and end to 08:06:00.000. The number of events is shown under the search bar with a little green tick to its left.*
+*To the right of the search bar is a dropdown that allows us to filter by date or time. Hopefully it's already set to 'all time'. Now we can use it to specify a 'Date time range'. Select this option and set the date as April 15th 2022 for both start and end. Set the start time to 08:05:00.000 and end to 08:06:00.000. The number of events is shown under the search bar with a little green tick to its left.*
 
 <details>
   <summary>Spoiler warning: Answer</summary>  
