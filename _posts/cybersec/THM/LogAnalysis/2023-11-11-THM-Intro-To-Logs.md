@@ -2,7 +2,7 @@
 layout: post
 title:  "TryHackMe - Intro To Logs"
 date:   2023-11-11 00:00:00 +0900
-categories: [Logging]
+categories: [TryHackMe, SOC 2 Path, Log Analysis]
 comments: true
 ---
 

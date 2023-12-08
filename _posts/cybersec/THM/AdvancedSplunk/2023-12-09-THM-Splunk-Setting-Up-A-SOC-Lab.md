@@ -2,7 +2,7 @@
 layout: post
 title:  "TryHackMe - Splunk: Setting Up a SOC Lab"
 date:   2023-12-09 00:00:00 +0900
-categories: [Splunk]
+categories: [TryHackMe, SOC 2 Path, Splunk]
 comments: true
 ---
 
