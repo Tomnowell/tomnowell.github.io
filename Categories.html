@@ -1,11 +1,14 @@
 ---
-layout: page
+layout: default
 permalink: /blog/categories/
 title: Categories
 ---
 
 <div id="archives">
+	<p>An archive of blog posts by post category.</p>
+
 	{% for category in site.categories %}
+
 	<div class="archive-group">
 		{% capture category_name %}{{ category | first }}{% endcapture %}
 		<div id="#{{ category_name | slugize }}"></div>
