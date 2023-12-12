@@ -15,7 +15,7 @@ comments: true
 ---
 ### Introduction
 
-This sounds fun. We get to install Splunk and set it up on a Linux box and a Windows box! Let's get started!
+This sounds fun. We get to install Splunk and set it up on a Linux box and a Windows box! Let's get started! Today, we're looking at the Try Hack Me room [Splunk: Setting Up a SOC Lab](https://tryhackme.com/room/splunklab) on the SOC 2 Learning pathway.
 
 You can connect to this room's VMs via the browser, which is what I did. I like to full screen the browser and put it on a different desktop so that I can (in Windows) just press ctrl+Win and arrow keys to go between the VM and the room page. Unfortunately THM didn't provide RDP or ssh credentials. I'd like to at least have ssh for installation and interacting with the CLI. The lag on the terminal in the browser is painful, but it's a minor complaint.
 
