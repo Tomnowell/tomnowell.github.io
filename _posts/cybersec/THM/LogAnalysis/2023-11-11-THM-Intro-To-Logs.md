@@ -26,7 +26,7 @@ I'm not going to give the same information as the room does as I think the copyr
 
 Start the machine here and it should open in the split-screen view. If it doesn't find the blue button at the top right of the page and click to open in split screen view. I'm doing this on a 13" notebook so split screen is a bit too tiny. When I want to interact with the machine in browser or RDP I tend to maximise the browser window and separate it and then stick it on the next desktop and use ctrl+Windows+arrow(R/L) to switch between remote machine and local.
 
-For this machine you actually don't really need a desktop so I just ssh in from my WSL linux install through the VPN. I will document my usual setup here soon. 
+For this machine you actually don't really need a desktop so I just ssh in from my WSL linux install through the VPN. I will document my usual setup here soon.
 
 However you choose to connect the login credentials for damianhall are on this page.
 
