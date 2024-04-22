@@ -1,2 +1,20 @@
-{% if site.google_analytics and jekyll.environment == 'production' %} {% include
-google_analytics.html %} {% endif %}
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+{% include head.html%}
+
+    <body>
+        {% include header.html %}
+
+        <div class="page-content">
+            <div class="wrapper">
+            {{ content }}
+            </div>
+        </div>
+
+        {% include footer.html %}
+
+        {% if jekyll.environment == "production" and site.google_analytics %}
+            {% include google_analytics.html %}
+        {% endif %}
+    </body>
+</html>
