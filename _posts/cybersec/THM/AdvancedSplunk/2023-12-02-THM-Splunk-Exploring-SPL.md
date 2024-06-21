@@ -14,13 +14,13 @@ comments: true
 
 ---
 
-### Introduction
+## Introduction
 
 We met Splunk back on the SOC 1 path. [In this room](https://tryhackme.com/room/splunkexploringspl) we focus on SPL, the Search Processing Language.  Processing queries using a specified language reduces human error and ensures repeatability and allows processes to be documented and automated. Basically, it's a good idea to specify in code and automate anything that we do more than once.
 
 ---
 
-### Task 2: Connect with the Lab
+## Task 2: Connect with the Lab
 
 You can interact with this room's machine directly from the browser by following the provided link. Of course you can connect through the vpn or attackbox if you prefer.
 
@@ -46,7 +46,7 @@ It's worth noting that the machine can be painfully slow - maybe grab a coffee w
 
 ---
 
-### Task 3: Search & Reporting App Overview
+## Task 3: Search & Reporting App Overview
 
 Still learning our way around the interface.
 
@@ -85,7 +85,7 @@ Still learning our way around the interface.
 
 ---
 
-### Task 4: Splunk Processing Language Overview
+## Task 4: Splunk Processing Language Overview
 
 I'm a little confused is it search processing language or Splunk processing language. There are so many acronyms it's difficult to keep track of them all. Or is it SSPL, SPlunk Search Processing Language?
 
@@ -150,7 +150,7 @@ Wildcards in strings are handled like in regexes with an asterisk.
 
 ---
 
-### Task 5: Filtering the Results in SPL
+## Task 5: Filtering the Results in SPL
 
 #### fields
 Here we learn how to specify the fields we wish to select within the SPL. We can pipe from the search query term using the | character like in most shells. Fields are added with a + and removed with a -
@@ -198,7 +198,7 @@ Removes duplicate fields from search results.
 
 ---
 
-### Task 6: SPL - Structuring the Search Results
+## Task 6: SPL - Structuring the Search Results
 
 You might want to reduce the number of events you're viewing at one time. Or you're initially only interested in the start or the end of the list. Functions such as head and tails can give a snapshot of the start or end of the search results. If you've ever used Python and Pandas to do some data analysis you'll probably be pretty comfortable with these commands.
 
@@ -243,7 +243,7 @@ You might want to reduce the number of events you're viewing at one time. Or you
 
 ---
 
-### Task 7: Transformational Commands in SPL
+## Task 7: Transformational Commands in SPL
 
 There's a lot of great information here on how to get statistical data using SPL and transforming the search. Also they touch on generating charts.
 
@@ -294,7 +294,7 @@ There's a lot of great information here on how to get statistical data using SPL
 
 ---
 
-### Recap and Conclusion
+## Recap and Conclusion
 
 SPL seems pretty intuitive and the Splunk interface is very clean and also intuitive. I like it! I guess these are simple examples but it definitely has some easy to memorize usage patterns especially if you're quite comfortable in bash and/or Python. I was a little confused by the meaning of dedup until I realised it stood for de-duplicate *facepalm*. Why this couldn't be called unique (or uniq as is quite often used) I don't know. If you do know please let me know!
 

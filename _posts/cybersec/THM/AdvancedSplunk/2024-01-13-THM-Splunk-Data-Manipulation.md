@@ -9,9 +9,14 @@ categories:
 comments: true
 ---
 
+#### Learn How to Parse and Manipulate Data in Splunk
+
+---
+
 <div> <img src="/images/splunk4.webp" alt="Computer tech cartoon" /> </div>
 
-#### Learn How to Parse and Manipulate Data in Splunk
+---
+
 ## Introduction
 
 Here we're going to walk through the TryHackMe room [Splunk: Data Manipulation](https://tryhackme.com/room/splunkdatamanipulation). Part of the Advanced Splunk module on the SOC Level 2 learning path.
@@ -19,6 +24,7 @@ Here we're going to walk through the TryHackMe room [Splunk: Data Manipulation](
 We're expected to already have knowledge of regex and Splunk basics.
 
 ---
+
 ## Task 2 - Scenario and Lab Instructions
 
 We are John (not Bob).
@@ -73,6 +79,7 @@ cp -a /home/ubuntu/scripts/ /opt/splunk/etc/apps/DataApp/bin/ # -a preserves fil
 ```
 
 ---
+
 ## Task 3 - Splunk Data Processing: Overview
 
 Some reading to do. Don't skip it!
@@ -84,6 +91,7 @@ Some reading to do. Don't skip it!
 *No answer needed*
 
 ---
+
 ## Task 4 - Exploring Splunk Configuration Files
 
 More reading about config files and stanzas. Stanzas are how individual data points are expressed, processed and indexed within Splunk.
@@ -131,6 +139,7 @@ More reading about config files and stanzas. Stanzas are how individual data poi
 </details>
 
 ---
+
 ## Task 5 - Creating a Simple Splunk App
 
 We are told that installed splunk instances are located here:
@@ -140,6 +149,7 @@ We are told that installed splunk instances are located here:
 ```
 
 ---
+
 **Q1: If you create an App on Splunk named THM, what will be its full path on this machine?**
 
 *Hint: It'll be in the apps directory.*
@@ -150,6 +160,7 @@ We are told that installed splunk instances are located here:
 </details>
 
 ---
+
 ## Task 6 - Event Boundaries - Understanding The Problem
 
 Do work through the examples, creating the example DataApp - you'll need it later on.
@@ -243,6 +254,7 @@ You should see the logs comming in nicely formatted now.
 </details>
   
 ---
+
 ## Task 7 - Parsing Multi-line Events
 
 Let's take a look at some longer events and how the event boundaries might be established and defined.
@@ -270,6 +282,7 @@ Let's take a look at some longer events and how the event boundaries might be es
 </details>
 
 ---
+
 ## Task 8 - Masking Sensitive Data
 
 Everyone has some sensitive data - whether it's financial information, an important private number like a US social security number or even just an email address or telephone number you don't want to publish for everyone to see.
@@ -299,6 +312,7 @@ Handling sensitive data is also often a matter of standards compliance and somet
 </details>
 
 ---
+
 ## Task 9 - Extracting Custom Fields
 
 There seems to be a typo where we are instructed to create a fields.conf file. However, at one point this is referred to as 'Fields.conf'. I think the lowercase version should be used if only to keep consistency with other conf file naming used in these examples.
@@ -407,6 +421,7 @@ As you can see I only added the purchase_logs sourcetype for this task in the in
 </details>
 
 ---
+
 ## Recap and Conclusion
 
 I kept getting pulled away in this room so it took a while to get through it. But it was a great learning tool and I feel much more comfortable configuring Splunk to ingest new and different data sources, creating detailed events with meaningful event boundaries and using regular expressions to extract interesting fields. Splunk also has a built-in 'Extract New Fields' function which could be worth exploring for those who dislike creating their own regular expressions. I quite enjoy the challenge of learning regex. With the help of [regex101](https://regex101.com), I find it fun and satisfying. 

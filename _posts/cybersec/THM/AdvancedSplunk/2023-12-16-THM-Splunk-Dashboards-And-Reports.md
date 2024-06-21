@@ -6,9 +6,13 @@ categories: [TryHackMe, SOC 2 Path, Splunk]
 comments: true
 ---
 
+#### Creating Dashboards and Reports in Splunk
+
+---
+
 <div> <img src="/images/splunk3.webp" alt="Computer tech cartoon" /> </div>
 
-#### Creating Dashboards and Reports in Splunk.
+---
 
 ## Introduction
 
