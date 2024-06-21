@@ -40,12 +40,11 @@ cd /opt/splunk/bin
 ./splunk start --accept-license
 ```
 
-Go ahead and create a user account
-Wait for setup to finish
-Access your splunk instance on:
-http://coffely:8000
-Or if you're using the VPN http://VM_IP_ADDRESS:8000
-Sign in with the credentials you made on installation*
+- Go ahead and create a user account
+- Wait for setup to finish
+- Access your splunk instance on: http://coffely:8000
+- Or if you're using the VPN http://VM_IP_ADDRESS:8000
+- Sign in with the credentials you made on installation*
 
 ---
 
@@ -218,6 +217,8 @@ adduser analyst
 
 That's the end of the Linux VM. *Phew* quite a lot to ingest, punny. But all good fun!
 
+---
+
 ## Task 7 - Splunk: Installing on Windows
 
 We're going to connect using the browser again.
@@ -226,17 +227,17 @@ We're going to connect using the browser again.
 
 The machine will whir away for a while considering it's next move before presenting the user with a chance to read the user license agreement and view or change the default install options. I thoroughly read the EULA before ticking the box as I am sure you will - and I left all the default options.
 
-
 - Tick EULA box and click Next
 - Add name and password for administrator account
 - Next!
-
 
 About 5 minutes later the install finished and I was prompted to open a browser to view splunk. I declined this time.
 
 You can connect to the splunk instance in the browser either on the local loopback address from the browser 127.0.0.1:8000 or over the VPN from attackbox or your computer using http://VM_IP_ADDRESS:8000. Almost the same as for the linux box I guess just coffely doesn't resolve to localhost.
 
 Alright! We're done here time to move on to the forwarders!
+
+---
 
 **Q1: What is the default port Splunk runs on?**
 
@@ -260,7 +261,7 @@ Alright! We're done here time to move on to the forwarders!
 
 ---
 
-**Q3Click on the Monitor option; what is the first option shown in the monitoring list?**
+**Q3: Click on the Monitor option; what is the first option shown in the monitoring list?**
 
 *Hint: Click on the Monitor option. What's at the top of the list?*
 
@@ -275,9 +276,11 @@ Alright! We're done here time to move on to the forwarders!
 
 In splunk, configure the receiver as shown in the room info.
 
-*Hint: Settings -> Forwarding and Receiving -> New Receiving Port -> 9997 (or whatever port you like)*
+*Hint: Settings -\> Forwarding and Receiving -\> New Receiving Port -\> 9997 (or whatever port you like)*
 
 Then install the splunk forwarder. It's already in the Downloads folder.
+
+---
 
 **Q1: What is the full path in the C:\Program Files where Splunk forwarder is installed?**
 

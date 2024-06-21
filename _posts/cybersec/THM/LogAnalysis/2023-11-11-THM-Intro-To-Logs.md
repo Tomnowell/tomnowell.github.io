@@ -31,7 +31,7 @@ For this machine you actually don't really need a desktop so I just ssh in from 
 However you choose to connect the login credentials for damianhall are on this page.
 
 ---
- 
+
 **Q1:  What is the name of your colleague who left a note on the Desktop?**
 
 *Hint: Check the note.*
