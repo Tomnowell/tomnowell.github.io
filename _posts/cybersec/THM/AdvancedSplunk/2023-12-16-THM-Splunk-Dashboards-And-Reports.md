@@ -1,15 +1,9 @@
 ---
-
 layout: post
-
 title: "TryHackMe - Splunk: Dashboards and Reports"
-
 date:   2023-12-16 00:00:00 +0900
-
 categories: [TryHackMe, SOC 2 Path, Splunk]
-
 comments: true
-
 ---
 
 <div> <img src="/images/splunk3.webp" alt="Computer tech cartoon" /> </div>
