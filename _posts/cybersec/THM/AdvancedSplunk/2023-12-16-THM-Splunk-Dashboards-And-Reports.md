@@ -102,7 +102,8 @@ I'm not sure why we need to put this on a dashboard. Let's cheat and get the ans
 Okay now that we've answered the question lets make a line graph and add it to a dashboard.
 
 We can get our statistics with the search:
-- index="web_logs" host="web-server"| rare status_code
+
+- index="web_logs" host="web-server" \| rare status_code
 - visualisations lets us choose a line chart as instructed.
 - When you're happy with your chart click 'Save As'
 - and either New Dashboard or add to an existing Dashboard.
