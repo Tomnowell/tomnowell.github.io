@@ -9,7 +9,7 @@ categories:
 comments: true
 ---
 
-<div> <img src="/images/splunk3.webp" alt="Computer tech cartoon" /> </div>
+<div> <img src="/images/splunk4.webp" alt="Computer tech cartoon" /> </div>
 
 #### Learn How to Parse and Manipulate Data in Splunk
 ## Introduction
