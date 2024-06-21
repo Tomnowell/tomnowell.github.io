@@ -124,7 +124,7 @@ Alright! We're on the home straight. Let's learn about alerts and priority.
 Looking at the alerts tab on the VM we see:
 
 > This feature is not available with your installed set of licenses.
->  
+>
 
 \
 
