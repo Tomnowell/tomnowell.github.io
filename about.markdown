@@ -4,15 +4,17 @@ title: About
 permalink: /about/
 ---
 
-### Hello
+## Hello
 
-I am a language teacher, software developer, cyber security learner and recently, a father. I live in Southern Kyushu in Japan. I'm a keen musician - I play the guitar, piano and violin and sing whenever I get the chance. I enjoy running, playing soccer and tennis. I speak English fluently and consider myself somewhat of a grammar nerd (but not a grammar snob). I speak Japanese poorly to an intermediate level although I am trying to improve.
+I am a language teacher, software developer, cyber security learner and recently, a father. I live in Southern Kyushu in Japan. I'm a keen musician - I play the guitar, piano and violin and sing whenever I get the chance. I enjoy running, playing soccer and tennis. I speak English fluently and consider myself somewhat of a grammar nerd (but not a grammar snob). I speak some Japanese at a roughly intermediate level although I am trying to improve.
 
-### Contact
+I'm currently reading Computer Science (MSc) at York University (U.K.) on the side.
+
+## Contact
 
 To get in touch, please send an email:
 
-tom[at]tomnowell.com
+tom[at]tomnowell[.]com
 
 Or through my socials.
 
