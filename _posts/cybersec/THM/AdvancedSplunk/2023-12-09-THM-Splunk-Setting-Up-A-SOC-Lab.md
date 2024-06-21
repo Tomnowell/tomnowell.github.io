@@ -276,7 +276,7 @@ Alright! We're done here time to move on to the forwarders!
 
 In splunk, configure the receiver as shown in the room info.
 
-*Hint: Settings -\> Forwarding and Receiving -\> New Receiving Port -\> 9997 (or whatever port you like)*
+*Hint: Settings -> Forwarding and Receiving -> New Receiving Port -> 9997 (or whatever port you like)*
 
 Then install the splunk forwarder. It's already in the Downloads folder.
 
@@ -306,8 +306,7 @@ Then install the splunk forwarder. It's already in the Downloads folder.
 
 We need to get some data into splunk. We won't use the CLI this time. Back to the browser.
 
-
-> Settings -> Add Data -> Forward
+- Settings -> Add Data -> Forward
 
 ### Select Forwarders_
 
@@ -382,7 +381,7 @@ Nearly there, we've got a forwarder set up. Now let's look at ingesting some log
 
 Let's look in the directory and find what file we need to add. Check out the directory in Explorer:
 
-> C:\inetpub\logs\LogFiles\
+- C:\inetpub\logs\LogFiles\
 
 *Note: My VM instance had a log file called W3SVC1 - the example on the task instructions uses W3SVC2. Yours may be different.*
 
@@ -403,8 +402,8 @@ Looks like this is a Microsoft IIS Server:
 - Next
 
 ### Done
- 
-- Submit 
+
+- Submit
 
 From these logs (and from the question posed) we see that there is a secret-flag.html page
 
@@ -423,4 +422,4 @@ From these logs (and from the question posed) we see that there is a secret-flag
 
 The Windows VM was a little sluggish in installing Splunk and the forwarder. But the Windows VM was very straightforward after doing the Linux VM. All in all it was good fun and an interesting lesson!
 
-Next up: [Splunk: Dashboards and Reports](http://tomnowell.com/Dash)
+Next up: [Splunk: Dashboards and Reports](http://tomnowell.com/THM-Dashboards-And-Reports)
