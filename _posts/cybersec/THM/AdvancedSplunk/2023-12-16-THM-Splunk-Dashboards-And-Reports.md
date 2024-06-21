@@ -20,8 +20,8 @@ comments: true
 
 This is a writeup for the TryHackMe room (Splunk: Dashboards and Reports)[https://tryhackme.com/room/splunkdashboardsandreports]. It's probably best to go through the Introductory rooms first and these are linked to from the Introduction task under Pre-requisites.
 
-I'm excited for this room. I love those SIEM dashboards. You feel like your commanding a starship or at least doing something important! Let's gOoO!
-
+I'm excited for this room. I love those SIEM dashboards. You feel like your commanding a starship! Let's gOoO!
+ 
 ---
 ## Task 2 - Organizing Data in Splunk
 
@@ -31,7 +31,7 @@ This task is mostly just a warning to anyone who hasn't yet had to deal with lar
 
 **Q1: Which search term will show us results from all indices in Splunk?**
 
-*Hint: \* is a wildcard and we set the index with a = sign.*  
+*Hint: \* is a wildcard and we set the index with an = sign.*  
 
 <details>
 	<summary>Spoiler warning: Answer</summary>
