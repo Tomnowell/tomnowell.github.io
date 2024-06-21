@@ -60,7 +60,7 @@ Let's get into the questions!
 
 Okay let's make the report anyway because it's good practice!
 
-- Search: index=network_logs host="network-server" | stats count by port
+- Search: index=network_logs host="network-server" \| stats count by port
 - Save as -> Report
 - Give your report a title and description if you wish
 - We can see our report. It's in ascending order we can click the arrow for descending and we see 4 ports are used X times.
