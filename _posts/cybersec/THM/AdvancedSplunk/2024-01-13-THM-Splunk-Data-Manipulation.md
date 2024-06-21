@@ -29,9 +29,9 @@ Here we can start the machine. Unfortunately we're not given login credentials. 
 
 **Q1: Connect to the Lab.**
 
-If you do want to connect via ssh then you can follow my method here. Let me know if you have another way in! I reset the ubuntu user password and sshed in with the new password.
+If you do want to connect via ssh then you can follow the method I used here. Let me know if you have another way in! I reset the ubuntu user password and sshed in with the new password.
 
-From the machines terminal in split screen browser:
+From the machine's terminal in split screen browser:
 
 ```bash
 
