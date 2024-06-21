@@ -127,9 +127,10 @@ We can get our statistics with the search:
 
 Alright! We're on the home straight. Let's learn about alerts and priority.
 
-Looking at the alerts tab on the VM we can see:
+Looking at the alerts tab on the VM we see:
 
-> This feature is not available with your installed set of licenses.
+> "This feature is not available with your installed set of licenses."
+
 
 It's a little disappointing to learn that licensing issues stop us from doing practical work setting up alerts.
 
