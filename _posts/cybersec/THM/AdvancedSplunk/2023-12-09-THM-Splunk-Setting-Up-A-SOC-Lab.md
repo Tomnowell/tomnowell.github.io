@@ -6,24 +6,26 @@ categories: [TryHackMe, SOC 2 Path, Splunk]
 comments: true
 ---
 
-##### Explore Splunk Beyond Basics
+#### Explore Splunk Beyond Basics
 
 ---
 
 <div> <img src="/images/splunk2.jpeg" alt="Computer tech cartoon" /> </div>
 
 ---
-### Introduction
+## Introduction
 
 This sounds fun. We get to install Splunk and set it up on a Linux box and a Windows box! Let's get started! Today, we're looking at the Try Hack Me room [Splunk: Setting Up a SOC Lab](https://tryhackme.com/room/splunklab) on the SOC 2 Learning pathway.
 
 You can connect to this room's VMs via the browser, which is what I did. I like to full screen the browser and put it on a different desktop so that I can (in Windows) just press ctrl+Win and arrow keys to go between the VM and the room page. Unfortunately THM didn't provide RDP or ssh credentials. I'd like to at least have ssh for installation and interacting with the CLI. The lag on the terminal in the browser is painful, but it's a minor complaint.
 
-### Task2 - Splunk: Setting up a Lab
+---
+
+## Task2 - Splunk: Setting up a Lab
 
 This is more like a continued introduction. Let's proceed!
 
-### Task 3 - Splunk: Deployment on Linux Server
+## Task 3 - Splunk: Deployment on Linux Server
 
 *Note: There are two VMs for this room and I recommend setting some time aside to work through all the steps on each machine in one go. The reason being that later tasks rely on work performed in previous tasks. Eg. Task 6 - configuring the forwarder on linux requires the installation steps performed in task 2. It took me about an hour each to work through the machines while taking notes. I consider myself on the slow side, especially while learning - so you may be able to get through much faster.*
 
@@ -38,18 +40,18 @@ cd /opt/splunk/bin
 ./splunk start --accept-license
 ```
 
-```
 Go ahead and create a user account
 Wait for setup to finish
 Access your splunk instance on:
 http://coffely:8000
 Or if you're using the VPN http://VM_IP_ADDRESS:8000
 Sign in with the credentials you made on installation*
-```
+
+---
 
 **Q1: What is the default port for Splunk?**
 
-*We can see the port used to access splunk after the : in the splunk URL*
+*Hint: We can see the port used to access splunk after the : in the splunk URL*
 
 <details>
   <summary>Spoiler warning: Answer</summary>  
@@ -58,7 +60,7 @@ Sign in with the credentials you made on installation*
 
 ---
 
-### Task 4 - Splunk: Interacting with CLI
+## Task 4 - Splunk: Interacting with CLI
 
 We'll go back to the terminal for interacting with the CLI and stay as root. Or if you aren't root then:
 
@@ -95,7 +97,7 @@ To get help on any individual command. Nice!
 
 **Q1: In Splunk, what is the command to search for the term coffely in the logs?**
 
-*We can see how to run a search query in the task information*
+*Hint: We can see how to run a search query in the task information*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -110,7 +112,7 @@ To get help on any individual command. Nice!
 
 ---
 
-### Task 5 - Splunk: Data Ingestion
+## Task 5 - Splunk: Data Ingestion
 
 For data ingestion we're introduced to forwarders. These come in two varieties: Heavy forwarders and universal forwarders. Heavy forwarders apply a filter, analyse or modify the logs in some way before forwarding to the SIEM. Universal forwarders on the other hand are lightweight and just sends the log data from the host to the SIEM.
 
@@ -129,17 +131,15 @@ cd /opt/splunkforwarder
 ./bin/splunk start --accept-license
 ```
 
-```
 Enter new credentials
 You may get an error that the management port is already bound
 Select y and set a new port number - I followed the example and chose 8090
-```
 
 ---
 
 **Q1: What is the default port, on which Splunk Forwarder runs on?**
 
-*If you get the error that the port is already bound - it should show the default port.*
+*Hint: If you get the error that the port is already bound - it should show the default port.*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -148,7 +148,7 @@ Select y and set a new port number - I followed the example and chose 8090
 
 ---
 
-### Task 6 - Configuring Forwarder on Linux
+## Task 6 - Configuring Forwarder on Linux
 
 Change VM_IP_ADDRESS to your VM's IP address:
 
@@ -162,9 +162,12 @@ To view the inputs:
 ```bash
 /opt/splunkforwarder/etc/apps/search/local/inputs.conf
 ```
+
 See the logs in splunk go to search and search the index Linux_host
 
-```index="linux_host"```
+```splunk
+index="linux_host"
+```
 
 *Note: We don't need to change the time period as we're collecting this data now so past 24 hours default is fine.*
 
@@ -172,7 +175,7 @@ See the logs in splunk go to search and search the index Linux_host
 
 **Q1: Follow the same steps and ingest /var/log/auth.log file into Splunk index Linux_logs. What is the value in the sourcetype field?**
 
-*I'm Not sure about this answer I added the auth.log file and the sourcetype for those logs was auth-too_small but that is not the answer - check the sourcetype for the other log file*
+*Hint: I'm Not sure about this answer I added the auth.log file and the sourcetype for those logs was auth-too_small but that is not the answer - check the sourcetype for the other log file*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -183,9 +186,10 @@ See the logs in splunk go to search and search the index Linux_host
 
 **Q2: Create a new user named analyst using the command adduser analyst. Once created, look at the events generated in Splunk related to the user creation activity. How many events are returned as a result of user creation?**
 
-*At first I misunderstood this question. I thought we need to add a user to splunk. But, we need to add a user to splunkforwarder. Splunk doesn't accept the adduser command. This should have been my first warning.*
+*Hint: At first I misunderstood this question. I thought we need to add a user to splunk. But, we need to add a user to splunkforwarder. Splunk doesn't accept the adduser command. This should have been my first warning.*
 
 *So, within splunkforwarder directory run:*
+
 ```bash
 adduser analyst
 # Or any name you like - fill in the requested info for the new user
@@ -202,7 +206,7 @@ adduser analyst
 
 **Q3: What is the path of the group the user is added after creation?**
 
-*One of our log entries should give the answer to this question:*
+*Hint:One of our log entries should give the answer to this question:*
 *coffely groupadd[38041]: group added to...*
 
 <details>
@@ -214,19 +218,19 @@ adduser analyst
 
 That's the end of the Linux VM. *Phew* quite a lot to ingest, punny. But all good fun!
 
-### Task 7 - Splunk: Installing on Windows
+## Task 7 - Splunk: Installing on Windows
 
 We're going to connect using the browser again.
 
-*Open the Downloads folder and run the splunk_instance installer.*
+*Hint: Open the Downloads folder and run the splunk_instance installer.*
 
 The machine will whir away for a while considering it's next move before presenting the user with a chance to read the user license agreement and view or change the default install options. I thoroughly read the EULA before ticking the box as I am sure you will - and I left all the default options.
 
-```
-Tick EULA box and click Next
-Add name and password for administrator account
-Next!
-```
+
+- Tick EULA box and click Next
+- Add name and password for administrator account
+- Next!
+
 
 About 5 minutes later the install finished and I was prompted to open a browser to view splunk. I declined this time.
 
@@ -236,7 +240,7 @@ Alright! We're done here time to move on to the forwarders!
 
 **Q1: What is the default port Splunk runs on?**
 
-*We just asked this question for the Linux version. I guess it could use different ports. But why would it? It doesn't!*
+*Hint: We just asked this question for the Linux version. I guess it could use different ports. But why would it? It doesn't!*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -247,7 +251,7 @@ Alright! We're done here time to move on to the forwarders!
 
 **Q2: Click on the Add Data tab; how many methods are available for data ingestion?**
 
-*Before trying to search anything click on the add data button on the first splunk page. There are only a few ways to add data*
+*Hint: Before trying to search anything click on the add data button on the first splunk page. There are only a few ways to add data*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -258,7 +262,7 @@ Alright! We're done here time to move on to the forwarders!
 
 **Q3Click on the Monitor option; what is the first option shown in the monitoring list?**
 
-*Click on the Monitor option. What's at the top of the list?*
+*Hint: Click on the Monitor option. What's at the top of the list?*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -267,17 +271,17 @@ Alright! We're done here time to move on to the forwarders!
 
 ---
 
-### Task 8 - Installing and Configuring Forwarder
+## Task 8 - Installing and Configuring Forwarder
 
 In splunk, configure the receiver as shown in the room info.
 
-*Settings -> Forwarding and Receiving -> New Receiving Port -> 9997 (or whatever port you like)*
+*Hint: Settings -> Forwarding and Receiving -> New Receiving Port -> 9997 (or whatever port you like)*
 
 Then install the splunk forwarder. It's already in the Downloads folder.
 
 **Q1: What is the full path in the C:\Program Files where Splunk forwarder is installed?**
 
-*The install path was given when we checked the default install path and accepted the EULA. It's also in a screen shot in the task materials. Remember Windows file slashes go the wrong way '\\'*
+*Hint: The install path was given when we checked the default install path and accepted the EULA. It's also in a screen shot in the task materials. Remember Windows file slashes go the wrong way '\\'*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -286,7 +290,7 @@ Then install the splunk forwarder. It's already in the Downloads folder.
 
 **Q2: What is the default port on which Splunk configures the forwarder?**
 
-*This is also stated as a part of the setup procedure and we already set it as a listen port within splunk.*
+*Hint: This is also stated as a part of the setup procedure and we already set it as a listen port within splunk.*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -295,56 +299,47 @@ Then install the splunk forwarder. It's already in the Downloads folder.
 
 ---
 
-### Task 9 - Splunk: Ingesting Windows Logs
+## Task 9 - Splunk: Ingesting Windows Logs
 
 We need to get some data into splunk. We won't use the CLI this time. Back to the browser.
 
-```
-Settings -> Add Data -> Forward
-```
 
-#### Select Forwarders_
+> Settings -> Add Data -> Forward
 
-```
-Select Forwarders -> Available host(s)
-Click on the Windows coffeylab entry - it will then appear in selected host(s) too
-dd a new Server Class Name - I called it coffee_lab as that was used in the example.
-Next
-```
+### Select Forwarders_
 
-#### Select Source
+- Select Forwarders -> Available host(s)
+- Click on the Windows coffeylab entry - it will then appear in selected host(s) too
+- dd a new Server Class Name - I called it coffee_lab as that was used in the example.
+- Next
 
-```
-Local Event Logs -> (Application & Security & System) Click on each - they will appear in the selected items pane.
-Next
-```
 
-#### Input Settings
+### Select Source
 
-```
-Create New Index
-Enter a name - I used win_logs to follow the example
-Next
-```
 
-#### Review
+- Local Event Logs -> (Application & Security & System) Click on each - they will appear in the selected items pane.
+- Next
 
-```
-OK.
-Next
-```
+### Input Settings
 
-#### Done
+- Create New Index
+- Enter a name - I used win_logs to follow the example
+- Next
 
-```
-Submit
-```
+### Review
+
+- OK.
+- Next
+
+### Done
+
+- Submit
 
 ---
 
 **Q1: While selecting Local Event Logs to monitor, how many Event Logs are available to select from the list to monitor?**
 
-*Did you count how many options there were for Local Event Logs. I didn't, but that scrollbar doesn't go down far. There were:*
+*Hint: Did you count how many options there were for Local Event Logs. I didn't, but that scrollbar doesn't go down far. There were:*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -355,9 +350,9 @@ Submit
 
 **Q2: Search for the events with EventCode=4624. What is the value of the field Message?**
 
-*search with the following query and open any of the log entries to find the message field.*
+*Hint: search with the following query and open any of the log entries to find the message field.*
 
-```
+```splunk
 index="win_logs" EventCode=4624
 ```
 
@@ -366,59 +361,47 @@ index="win_logs" EventCode=4624
   An account was successfully logged on.
 </details>
 
-### Task 10 - Ingesting Coffely Web Logs
+## Task 10 - Ingesting Coffely Web Logs
 
 Nearly there, we've got a forwarder set up. Now let's look at ingesting some logs from a web server. You don't actually need to do this to answer the room's questions but it's probably good to know how to monitor a webserver's log files.
 
-```Settings -> Add Data```
+- Settings -> Add Data
 
-#### Select Forwarders
+### Select Forwarders
 
-```
-From available host(s) select Windows coffeylab
-Add a new Server Class Name - I followed the example and named it web_logs
-Next
-```
+- From available host(s) select Windows coffeylab
+- Add a new Server Class Name - I followed the example and named it web_logs
+- Next
 
-#### Select Sources
+### Select Sources
 
 *Note: The directory name is given but the log filename given ends in \* which represents a number.*
 
 Let's look in the directory and find what file we need to add. Check out the directory in Explorer:
 
-```
-C:\inetpub\logs\LogFiles\
-```
+> C:\inetpub\logs\LogFiles\
 
 *Note: My VM instance had a log file called W3SVC1 - the example on the task instructions uses W3SVC2. Yours may be different.*
 
-```
-Files & Directories -> C:\inetpub\logs\LogFiles\W3SVC1
-Next
-```
+- Files & Directories -> C:\inetpub\logs\LogFiles\W3SVC1
+- Next
 
-#### Input Settings
+### Input Settings
 
 Looks like this is a Microsoft IIS Server:
 
-```
-Select -> IIS 
-Index -> win_logs
-Next
-```
+- Select -> IIS 
+- Index -> win_logs
+- Next
 
-#### Review
+### Review
 
-```
-OK
-Next
-```
+- OK
+- Next
 
-#### Done
-
-``` 
-Submit 
-```
+### Done
+ 
+- Submit 
 
 From these logs (and from the question posed) we see that there is a secret-flag.html page
 
@@ -426,14 +409,14 @@ From these logs (and from the question posed) we see that there is a secret-flag
 
 **Q1: In the lab, visit http://coffely.thm/secret-flag.html; it will display the history logs of the orders made so far. Find the flag in one of the logs.**
 
-*Go to http://coffely.thm/secret-flag.html and look at the orders. The flag is in the message section*
+*Hint: Go to http://coffely.thm/secret-flag.html and look at the orders. The flag is in the message section*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
   {COffely_Is_Best_iN_TOwn}
 </details>
 
-### Conclusion
+## Conclusion
 
 The Windows VM was a little sluggish in installing Splunk and the forwarder. But the Windows VM was very straightforward after doing the Linux VM. All in all it was good fun and an interesting lesson!
 

@@ -6,7 +6,7 @@ categories: [TryHackMe, SOC 2 Path, Log Analysis]
 comments: true
 ---
 
-##### Learn the operation process details
+#### Learn the operation process details
 
 ---
 
@@ -14,13 +14,13 @@ comments: true
 
 ---
 
-### Introduction
+## Introduction
 
 Here we'll take a look at the Tryhackme room [Log Operations](https://tryhackme.com/room/logoperations). This room follows on from the [Intro to Logs](/THM-Intro-To-Logs/) room. I thought this room would be a breeze. There are no deployable VMs and no files to download. However, this room is pretty information dense and it's too easy to skip over bits without letting them sink in properly. So I will do my best to actually comment on the room and thus, hopefully, consolidate my understanding and hopefully give some added value to anyone reading this.
 
 ---
 
-### Task 2 - Log Configuration
+## Task 2 - Log Configuration
 
 Here we are asked to think about (or discuss with a team) what the purpose of the logs are.  The four purposes given are: Security, Operational, Legal and Debug. 
 
@@ -30,7 +30,7 @@ It is likely that no purpose is outright ignored. Another example, a company foc
 
 **Q1: Which of the given log purposes would be suitable to measure the cost of using a service?**
 
-*Cost of services is usually this concern.*
+*Hint: Cost of services is usually this concern.*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -41,7 +41,7 @@ It is likely that no purpose is outright ignored. Another example, a company foc
 
 **Q2: Which of the given log purposes would be suitable for investigating application logs for enhancement and stability?**
 
-*The key term here is stability - enhancement could also fall under the answer for Q1 but here we want to remove problems.*
+*Hint: The key term here is stability - enhancement could also fall under the answer for Q1 but here we want to remove problems.*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -50,7 +50,7 @@ It is likely that no purpose is outright ignored. Another example, a company foc
 
 ---
 
-### Task 3 - Where to Start After Deciding the Logging Purpose
+## Task 3 - Where to Start After Deciding the Logging Purpose
 
 Here we are presented with some guiding questions that we might use in a meeting to decide our logging strategy. The first question is the *what* this is highly influenced by the purpose as discussed previously.
 
@@ -60,7 +60,7 @@ Most questions relate to the *how*. How much will (needs to be) logged? - This l
 
 **Q1: Which question's answer can be "as much as mentioned in the PCI DSS requirements"?**
 
-*PCI DSS relates to companies who process credit card information and is quite strict on how much data (and of course what data) is logged.*
+*Hint: PCI DSS relates to companies who process credit card information and is quite strict on how much data (and of course what data) is logged.*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -69,7 +69,7 @@ Most questions relate to the *how*. How much will (needs to be) logged? - This l
 
 ---
 
-### Task 4 - Configuration Dilemma: Planning and Implementation
+## Task 4 - Configuration Dilemma: Planning and Implementation
 
 Of course the dilemma is always about resources. Essentially, everything comes down to resources.  There are certain non-negotiable requirements and aspirational requirements and the most successful teams will maintain the base requirements while adding the most useful aspirational requirements possible using the resources that are (or could be made) available to them.
 
@@ -79,7 +79,7 @@ Base requirements lay out the data that must be logged to meet operational, secu
 
 **Q1: Which requirements are non-negotiable?**
 
-*We've said it in so many ways but we have to get the wording right for the answer to be accepted.*
+*Hint: We've said it in so many ways but we have to get the wording right for the answer to be accepted.*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -88,7 +88,7 @@ Base requirements lay out the data that must be logged to meet operational, secu
 
 ---
 
-### Task 5 - Principles and Difficulties
+## Task 5 - Principles and Difficulties
 
 Some of these principles may seem obvious but the obvious can easily be overlooked so it's always worth thinking about. I won't just repeat what the room says - it's good information. I will list the principles though. The stated log principles include: Collection, format, archival and accessibility, monitoring and alerts, security and change.
 
@@ -100,9 +100,9 @@ The final point made seems relevant to all aspects of security not just logging 
 
 ---
 
-**Q1: Your team is working on policies to decide which logs will be stored and which portion will be available for analysis. Which of the given logging principles would be implemented and improved?**
+**Q 1: Your team is working on policies to decide which logs will be stored and which portion will be available for analysis. Which of the given logging principles would be implemented and improved?**
 
-*The key words here are stored and available. We're looking at principles. So what's another word for store (especially for a long time)*
+*Hint: The key words here are stored and available. We're looking at principles. So what's another word for store (especially for a long time)*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -113,7 +113,7 @@ The final point made seems relevant to all aspects of security not just logging 
 
 **Q2: Your team implemented a brand new API logging product. One of the team members has been tasked with collecting the logs generated by that new product. The team member reported continuous errors when transferring the logs to the review platform. In this case, which of the given difficulties occurs?**
 
-*Here we assume the team member is technically proficient and is following procedure. There's a hint in the word error. Which challenge covers things that might be error-prone?*
+*Hint: Here we assume the team member is technically proficient and is following procedure. There's a hint in the word error. Which challenge covers things that might be error-prone?*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -122,7 +122,7 @@ The final point made seems relevant to all aspects of security not just logging 
 
 ---
 
-### Task 6 - Common Mistakes and Best Practices
+## Task 6 - Common Mistakes and Best Practices
 
 In almost all situations within a professional environment it is good to be aware of, and knowledgeable about, best practice. While it is important to learn from one's own mistakes - a true master learns from the mistakes of others.
 
@@ -130,7 +130,7 @@ In almost all situations within a professional environment it is good to be awar
 
 **Q1: As a consultant, you are doing a comprehensive risk assessment and noticed that one of the development teams implemented a custom script to generate logs for an old system which omits loggings at some phases. What would you call this? (Mistake or Practice?)**
 
-*It's not directly obvious which this is. If the omissions were planned then it may not be a problem to omit some phases from the logs. However the use of the word 'omit' rather than 'exclude' makes it sound like this is not the intended outcome. Also, you could just count the number of letters the answer requires.*
+*Hint: It's not directly obvious which this is. If the omissions were planned then it may not be a problem to omit some phases from the logs. However the use of the word 'omit' rather than 'exclude' makes it sound like this is not the intended outcome. Also, you could just count the number of letters the answer requires.*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -139,7 +139,7 @@ In almost all situations within a professional environment it is good to be awar
 
 ---
 
-### Conclusion
+## Conclusion
 
 I thought this room might be a bit light on substance due to no VM or separate activity. After completing it I found it's changed how I think about logging, why it's done, how it's done, and how it might be improved to address different goals.  
 

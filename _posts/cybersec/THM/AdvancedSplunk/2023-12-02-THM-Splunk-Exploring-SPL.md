@@ -6,7 +6,7 @@ categories: [TryHackMe, SOC 2 Path, Splunk]
 comments: true
 ---
 
-##### Learn and explore the basics of the Search Processing Language
+#### Learn and explore the basics of the Search Processing Language
 
 ---
 

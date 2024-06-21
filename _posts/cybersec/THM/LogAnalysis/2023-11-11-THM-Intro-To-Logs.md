@@ -6,7 +6,7 @@ categories: [TryHackMe, SOC 2 Path, Log Analysis]
 comments: true
 ---
 
-##### Learn the fundamentals of logging, data sources, collection methods and principles to step into the log analysis world
+#### Learn the fundamentals of logging, data sources, collection methods and principles to step into the log analysis world
 
 ---
 
@@ -14,13 +14,13 @@ comments: true
 
 ---
 
-### Introduction
+## Introduction
 
 This is a guide to [tryhackme: Intro To Logs](https://tryhackme.com/room/introtologs). The room starts with some nice graphics and a brief outline of learning outcomes. It looks like there is a lot to do, so let's get stuck in!  
 
 ---
 
-### Task 2 - Perspectives: Logs as Evidence of Historical Activity
+## Task 2 - Perspectives: Logs as Evidence of Historical Activity
 
 I'm not going to give the same information as the room does as I think the copyright rightly belongs to THM.
 
@@ -31,10 +31,10 @@ For this machine you actually don't really need a desktop so I just ssh in from 
 However you choose to connect the login credentials for damianhall are on this page.
 
 ---
-
+ 
 **Q1:  What is the name of your colleague who left a note on the Desktop?**
 
-*Check the note.*
+*Hint: Check the note.*
 
 ```bash
 cat Desktop/note.txt # (or open in the GUI) 
@@ -49,7 +49,7 @@ cat Desktop/note.txt # (or open in the GUI)
 
 **Q2: What is  full path to the suggested log file for initial investigation?**
 
-*Check the note!*
+*Hint: Check the note!*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -64,7 +64,7 @@ There's a lot of good information here about log types and how they are structur
 
 **Q1: Based on the list of log types in this task, what log type is used by the log file specified in the note from Task 2?**
 
-*Task 2 was discussing an Nginx server which is a web server...*
+*Hint: Task 2 was discussing an Nginx server which is a web server...*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -75,7 +75,7 @@ There's a lot of good information here about log types and how they are structur
 
 **Q2: Based on the list of log formats in this task, what log format is used by the log file specified in the note from Task 2?**
 
-*The materials clearly list what format the Nginx web server uses by default.*
+*Hint: The materials clearly list what format the Nginx web server uses by default.*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -84,7 +84,7 @@ There's a lot of good information here about log types and how they are structur
 
 ---
 
-### Task 4 - Collection, Management, and Centralisation
+## Task 4 - Collection, Management, and Centralisation
 
 A lot of information here and an important note about time synchronisation to ensure the timeline of the logs. This is not possible on the room's VM because it doesn't have an internet connection (and you don't have root access either unless you've found a way in).
 
@@ -94,7 +94,7 @@ Go through the exercises and configure rsyslog.
 
 **Q1: After configuring rsyslog for sshd, what username repeatedly appears in the sshd logs at /var/log/websrv-02/rsyslog_sshd.log, indicating failed login attempts or brute forcing?**
 
-*after you have done the exercises you should be able to view the log file - so run:*
+*Hint: after you have done the exercises you should be able to view the log file - so run:*
 
 ```bash
 cat /var/log/websrv-02/rsyslog_sshd.log 
@@ -111,7 +111,7 @@ cat /var/log/websrv-02/rsyslog_sshd.log
 
 **Q2: What is the IP address of SIEM-02 based on the rsyslog configuration file /etc/rsyslog.d/99-websrv-02-cron.conf, which is used to monitor cron messages?**
 
-*Check the cron configuration.*
+*Hint: Check the cron configuration.*
 
 ```bash
  cat /etc/rsyslog.d/99-websrv-02-cron.conf
@@ -126,7 +126,7 @@ cat /var/log/websrv-02/rsyslog_sshd.log
 
 **Q3: Based on the generated logs in /var/log/websrv-02/rsyslog_cron.log, what command is being executed by the root user?**
 
-*Look in the cron log grep for root and CMD.*
+*Hint: Look in the cron log grep for root and CMD.*
 
 ```bash
 cat /var/log/websrv-02/rsyslog_cron.log | grep -E 'root|CMD'
@@ -139,7 +139,7 @@ cat /var/log/websrv-02/rsyslog_cron.log | grep -E 'root|CMD'
 
 ---
 
-### Task 5 - Storage, Retention and Deletion
+## Task 5 - Storage, Retention and Deletion
 
 Read the info - main points are to have a storage, retention deletion and backup policy in place and to stick to it for many reasons including regulatory and legal but also to allow automation and reduce human error.
 
@@ -149,7 +149,7 @@ Follow the practical activity to automate log rotation.
 
 **Q1: Based on the logrotate configuration /etc/logrotate.d/99-websrv-02_cron.conf, how many versions of old compressed log file copies will be kept?**
 
-*Look in the cron configuration.*
+*Hint: Look in the cron configuration.*
 
 ```bash
 cat /etc/logrotate.d/99-websrv-02_cron.conf
@@ -164,7 +164,7 @@ cat /etc/logrotate.d/99-websrv-02_cron.conf
 
 **Q2: Based on the logrotate configuration /etc/logrotate.d/99-websrv-02_cron.conf, what is the log rotation frequency?**
 
-*See the output for the last question.*
+*Hint: See the output for the last question.*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -173,7 +173,7 @@ cat /etc/logrotate.d/99-websrv-02_cron.conf
 
 ---
 
-### Task 6 - Hands-on Exercise: Log analysis process, tools, and techniques
+## Task 6 - Hands-on Exercise: Log analysis process, tools, and techniques
 
 Time to get our hands dirty. There's still quite a bit of new information on data sources, parsing, normalising and sorting log data along with classification, enrichment, correlation, visualisation and finally reporting.
 
@@ -191,13 +191,13 @@ The normalisation commands are a bit long and, in my opinion, messy. These shoul
 
 Then sort and uniq are used to, well...sort and remove duplicates from the log entries.
 
-Again follow the url (not the link) in your browser (connected to the THM network) to view the consolidated log files. Open in a new tab because you'll want to access the unparsed data too.
+Again got to the  url in your browser connected to the THM network to view the consolidated log files. Open in a new tab because you'll want to access the unparsed data too.
 
 ---
 
 **Q1: Upon accessing the log viewer URL for unparsed raw log files, what error does "/var/log/websrv-02/rsyslog_cron.log" show when selecting the different filters?**
 
-*OK, this is the unparsed log file that we opened initially NOT the normalised and consolidated one. Hopefully you have it open. Follow the hint and click the dropdown next to the add filter.*
+*Hint: OK, this is the unparsed log file that we opened initially NOT the normalised and consolidated one. Hopefully you have it open. Follow the hint and click the dropdown next to the add filter.*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -208,7 +208,7 @@ Again follow the url (not the link) in your browser (connected to the THM networ
 
 **Q2: What is the process of standardising parsed data into a more easily readable and query-able format?**
 
-*This is what we did to the log file with all those awk sed and sort and uniq commands...*
+*Hint: This is what we did to the log file with all those awk sed and sort and uniq commands...*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -219,7 +219,7 @@ Again follow the url (not the link) in your browser (connected to the THM networ
 
 **Q3: What is the process of consolidating normalised logs to enhance the analysis of activities related to a specific IP address?**
 
-*This one isn't initially obvious unless you've really understood the reading at the start of this chapter. When we consolidate multiple logs we are really adding value to our log files. When we add extra context to a log in the form of say, an IP address we are performing xxxxxxxxxx on the log.*
+*Hint: This one isn't initially obvious unless you've really understood the reading at the start of this chapter. When we consolidate multiple logs we are really adding value to our log files. When we add extra context to a log in the form of say, an IP address we are performing xxxxxxxxxx on the log.*
 
 <details>
   <summary>Spoiler warning: Answer</summary>
@@ -228,7 +228,7 @@ Again follow the url (not the link) in your browser (connected to the THM networ
 
 ---
 
-### Conclusion
+## Conclusion
 
 I learned *a lot* from this room. And it has already started me off exploring the powerful awk and sed programs. 
 
