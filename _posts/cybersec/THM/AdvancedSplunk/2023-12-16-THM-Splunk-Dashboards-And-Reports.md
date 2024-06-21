@@ -131,6 +131,7 @@ Looking at the alerts tab on the VM we see:
 
 > This feature is not available with your installed set of licenses.
 >  
+
 \
 
 It's a little disappointing to learn that licensing issues stop us from doing practical work setting up alerts.
