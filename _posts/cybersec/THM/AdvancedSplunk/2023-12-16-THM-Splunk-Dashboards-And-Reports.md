@@ -2,7 +2,7 @@
 
 layout: post
 
-title: "TryHackMe - Splunk: Exploring SPL"
+title: "TryHackMe - Splunk: Dashboards and Reports"
 
 date:   2023-12-16 00:00:00 +0900
 
