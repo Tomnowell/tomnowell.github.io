@@ -12,6 +12,8 @@ comments: true
 
 ---
 
+<div> <img src="/images/splunk3.webp" alt="Computer tech cartoon" /> </div>
+
 # Splunk: Dashboards and Reports
 
 #### Creating Dashboards and Reports in Splunk.
