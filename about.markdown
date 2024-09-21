@@ -16,6 +16,7 @@ To get in touch, please send an email:
 
 tom[at]tomnowell[.]com
 
+If you wish to encrypt an email, or check my signature on correspondence or a document, please use my public key.
 PGPKey: [Public Key](/assets/PGPkey.asc)
 
 Or through my socials.
