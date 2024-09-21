@@ -16,6 +16,8 @@ To get in touch, please send an email:
 
 tom[at]tomnowell[.]com
 
+PGPKey: [Public Key](/assets/PGPkey.asc)
+
 Or through my socials.
 
 ### Other Things
