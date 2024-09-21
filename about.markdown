@@ -6,9 +6,7 @@ permalink: /about/
 
 ## Hello
 
-I am a language teacher, software developer, cyber security learner and recently, a father. I live in Southern Kyushu in Japan. I'm a keen musician - I play the guitar, piano and violin and sing whenever I get the chance. I enjoy running, playing soccer and tennis. I speak English fluently and consider myself somewhat of a grammar nerd (but not a grammar snob). I speak some Japanese at a roughly intermediate level although I am trying to improve.
-
-I'm currently reading Computer Science (MSc) at York University (U.K.) on the side.
+I am a language teacher, software developer, master's degree student, aspiring cyber security professional and recently, a father. I live in Southern Kyushu in Japan. I'm a keen musician - I play the guitar, piano and violin and sing whenever I get the chance. I enjoy running, playing soccer and tennis. I speak English fluently and Japanese to an intermediate level. I like reading, cooking and along with most of the human race, eating.
 
 ## Contact
 
@@ -19,8 +17,4 @@ tom[at]tomnowell[.]com
 If you wish to encrypt an email, or check my signature on correspondence or a document, please use my public key.
 PGPKey: [Public Key](/assets/PGPkey.asc)
 
-Or through my socials.
-
-### Other Things
-
-A note for the curious: All the cartoon art that title the blog posts on this site were drawn to my prompts by AI. So far they are all creations of Microsoft's Bing image creator which is powered by versions of OpenAI's Dall-E.
+Or through my socials down in the footer of the page.
