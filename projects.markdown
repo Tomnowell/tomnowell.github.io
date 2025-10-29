@@ -4,7 +4,14 @@ title: Projects
 permalink: /projects/
 ---
 
-I love making things and breaking things, too. Most of my projects are currently on hold as I complete a master's degree in Computer Science. Here's a couple of older projects:
+I love making things and breaking things, too. Most of my projects are currently on hold as I complete a master's degree in Computer Science. Here's what I've been working on:
+
+### GoDis
+[GoDis](https://github.com/Tomnowell/GoDis) is an exercise in Go implementing a very basic Redis style cache. This project really allowed me to appreciate Go's simplicity while exploring go routines and ways to approach unit testing in Go.
+
+### Reggie
+[Reggie](https://github.com/Tomnowell/Reggie) was my first project in Go and implements a very basic recursive regex matcher. 
+
 
 ### TicketyDo - An exercise in CI/CD - ToDo List with built-in Pomodoro
 This is an ongoing project for a product that almost certainly doesn't need to exist, but I like consolidating organisational apps and this is going to be the app I wanted when I was studying and trying to raise a family and work a full-time job. It's also really fun to explore GitHub Actions with Render for CD. I've done Azure DevOps stuff before, but it's more interesting to spread it out over different providers.
