@@ -4,22 +4,21 @@ title: Projects
 permalink: /projects/
 ---
 
-I love making things and breaking things, too. Most of my projects are currently on hold as I complete a master's degree in Computer Science. Here's what I've been working on:
+I love making and breaking things to see how they work. Most of my projects have been on hold while I completed a master's in Computer Science. Since finishing, I've had a little more time to devote to personal projects while my toddler and baby are asleep, here's what I've been working on:
 
-### GoDis
+### [GoDis](https://github.com/Tomnowell/GoDis)
 [GoDis](https://github.com/Tomnowell/GoDis) is an exercise in Go implementing a very basic Redis style cache. This project really allowed me to appreciate Go's simplicity while exploring go routines and ways to approach unit testing in Go.
 
-### Reggie
-[Reggie](https://github.com/Tomnowell/Reggie) was my first project in Go and implements a very basic recursive regex matcher. 
+### [Reggie](https://github.com/Tomnowell/Reggie)
+[Reggie](https://github.com/Tomnowell/Reggie) was my first project in Go and implements a very basic recursive regex matcher. The initial implementation was heavily influenced by [Rob Pike's regex matcher](https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html) in C. Although this example adds a few extras which were a lot of fun to make.
 
-
-### TicketyDo - An exercise in CI/CD - ToDo List with built-in Pomodoro
+### [TicketyDo](https://github.com/Tomnowell/TicketyDo) - An exercise in CI/CD - ToDo List with built-in Pomodoro
 This is an ongoing project for a product that almost certainly doesn't need to exist, but I like consolidating organisational apps and this is going to be the app I wanted when I was studying and trying to raise a family and work a full-time job. It's also really fun to explore GitHub Actions with Render for CD. I've done Azure DevOps stuff before, but it's more interesting to spread it out over different providers.
 [![ticketydo on github]](https://github.com/Tomnowell/TicketyDo]
 [ticketydo](https://ticketydo.com)
 
 
-### MacBox - Learning to Swift
+### [MacBox](https://github.com/Tomnowell/macbox) - Learning to Swift
 A work in progress - this app is intended to provide a GUI for macOS virtualisation libraries. It's not shipped yet...but (maybe) coming soon:
 
 [![MacBox on Github](/images/macBox.webp)](https://github.com/Tomnowell/macbox)
