@@ -21,7 +21,7 @@ This is an ongoing project for a product that almost certainly doesn't need to e
 ### [MacBox](https://github.com/Tomnowell/macbox) - Learning to Swift
 A work in progress - this app is intended to provide a GUI for macOS virtualisation libraries. It's not shipped yet...but (maybe) coming soon:
 
-[![MacBox on Github](/images/macBox.webp)](https://github.com/Tomnowell/macbox)
+[![MacBox on Github](/images/macBox.jpeg)](https://github.com/Tomnowell/macbox)
 
 ### Il Pane - A Sourdough Hydration Calculator in C# for Windows
 
