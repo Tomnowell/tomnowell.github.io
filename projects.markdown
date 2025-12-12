@@ -15,7 +15,16 @@ The idea for this project came about while I was doing my Master's degree. I rea
 This project taught me a lot about what actually goes into an iOS app. I thought it would be simple to combine a timer and todo list (and it was). But to flesh it out as a SwiftUI app with companion watchOS app, integrate with the built-in Reminders app, and navigate all the agreements and build processes that go into Apple's XCode pipeline was, let's say, educational. 
 [GitHub: open source](https://github.com/Tomnowell/tomtimer/)
 
-[![TicketyPom.com](/images/TicketyPomiOSLogo.png)](https://ticketypom.com)
+<div style="display: flex; gap: 20px;">
+  <a href="https://ticketypom.com">
+    <img src="/images/ticketyPomiOS.png" alt="Tickety Pom iOS screenshot" width="300" />
+  </a>
+  <a href="https:ticketypom.com">
+    <img src="/images/ticketyPomWatchOS.png" alt="Tickety Pom watchOS screenshot" width="300" />
+  </a>
+</div>
+
+[![TicketyPom.com](/images/TicketyPomiOSL.png)](https://ticketypom.com)
 
 ### [MacBox](https://github.com/Tomnowell/macbox) - Learning to Swift
 While I have recently really enjoyed coding in Go and Python, I like iOS and macOS and thought it would be good to learn some Swift. This project currently not shipped but I've been Alpha testing it for a while. If you'd like to help me Beta test drop me a message.
