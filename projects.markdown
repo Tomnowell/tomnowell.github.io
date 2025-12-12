@@ -8,12 +8,14 @@ I love making and breaking things to see how they work. Most of my projects have
 
 ---
 ### [TomTimer / TicketyPom](https://ticketypom.com) - Loving Swift
-Swift is an awesome language to code in. I really enjoyed playing around with Go, and while it is a bit more complicated, I've noticed some similarities that I like. And some quirks that really stumped me until I got it. Implicit self really confused me looking at other peoples' code. I couldn't get how what looked like local variables were still in scope in other methods of a class.
+Swift is an awesome language to code in. I really enjoyed playing around with Go, and while Swift does seem to be a bit more complicated, I've noticed some similarities that I like. And some quirks that really stumped me. Implicit self really confused me looking at other peoples' code. I couldn't understand how, what looked like local variables, were still in scope in other methods of a class.
 
-The idea for this project came about while I was doing my Master's degree. I really wanted to lay out a todo list and get it done. I'm happy to sit and write code for hours on end. I love the sense of flow I get from that level of concentration. But I struggled to put equal enthusiasm into the more academic parts of my degree such as reading complicated - and not always well written - academic papers and synthesising and writing material for my thesis. Pomodorro got me through the painful parts. At that time, I really wanted a simple timer and todo list. Now, I've finished my degree, I've had time to put into it. Open source is available on GitHub and I've just released it as a free app (with in app purchases) on the apple app store.
+The idea for this project came about while I was doing my Master's degree. I really wanted to lay out a todo list for the day and just get it done. Sounds simple, right? I'm happy to sit and write code for hours on end. I love the sense of flow I get from that level of concentration. But, I struggled to put equal enthusiasm into the more academic parts of my degree such as reading complicated, and not always well written, academic papers. Also synthesising and writing material for my thesis was difficult to prioritize. Pomodorro got me through the painful parts. At that time, I really wanted a simple timer and todo list. Now, I've finished my degree, I've had time to put into it. An open source version is freely available on GitHub and I've just released it as a free app (with in app purchases) on the apple app store (currently pending approval).
+
+This project taught me a lot about what actually goes into an iOS app. I thought it would be simple to combine a timer and todo list (and it was). But to flesh it out as a SwiftUI app with companion watchOS app, integrate with the built-in Reminders app, and navigate all the agreements and build processes that go into Apple's XCode pipeline was, let's say, educational. 
 [GitHub: open source](https://github.com/Tomnowell/tomtimer/)
 
-[![TicketyPom.com](/images/TicketyPomiOSLogo.png.)](https://ticketypom.com)
+[![TicketyPom.com](/images/TicketyPomiOSLogo.png)](https://ticketypom.com)
 
 ### [MacBox](https://github.com/Tomnowell/macbox) - Learning to Swift
 While I have recently really enjoyed coding in Go and Python, I like iOS and macOS and thought it would be good to learn some Swift. This project currently not shipped but I've been Alpha testing it for a while. If you'd like to help me Beta test drop me a message.
