@@ -7,10 +7,16 @@ permalink: /projects/
 I love making and breaking things to see how they work. Most of my projects have been on hold while I completed a master's in Computer Science. Since finishing, I've had a little more time to devote to personal projects while my toddler and baby are asleep, here's what I've been working on:
 
 ---
+### [TomTimer / TicketyPom](https://ticketypom.com) - Loving Swift
+Swift is an awesome language to code in. I really enjoyed playing around with Go, and while it is a bit more complicated, I've noticed some similarities that I like. And some quirks that really stumped me until I got it. Implicit self really confused me looking at other peoples' code. I couldn't get how what looked like local variables were still in scope in other methods of a class.
+
+The idea for this project came about while I was doing my Master's degree. I really wanted to lay out a todo list and get it done. I'm happy to sit and write code for hours on end. I love the sense of flow I get from that level of concentration. But I struggled to put equal enthusiasm into the more academic parts of my degree such as reading complicated - and not always well written - academic papers and synthesising and writing material for my thesis. Pomodorro got me through the painful parts. At that time, I really wanted a simple timer and todo list. Now, I've finished my degree, I've had time to put into it. Open source is available on GitHub and I've just released it as a free app (with in app purchases) on the apple app store.
+[GitHub: open source](https://github.com/Tomnowell/tomtimer/)
+
+[![TicketyPom.com](/images/TicketyPomiOSLogo.png.)](https://ticketypom.com)
 
 ### [MacBox](https://github.com/Tomnowell/macbox) - Learning to Swift
-A work in progress - this app is intended to provide a GUI for macOS virtualisation libraries. It's not shipped yet...but (maybe) coming soon:
-
+While I have recently really enjoyed coding in Go and Python, I like iOS and macOS and thought it would be good to learn some Swift. This project currently not shipped but I've been Alpha testing it for a while. If you'd like to help me Beta test drop me a message.
 [![MacBox on Github](/images/macBox.jpeg)](https://github.com/Tomnowell/macbox)
 
 ---
