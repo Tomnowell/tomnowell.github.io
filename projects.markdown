@@ -23,8 +23,6 @@ This project taught me a lot about what actually goes into an iOS app. I thought
   </a>
 </div>
 
-[![TicketyPom.com](/images/TicketyPomiOSL.png)](https://ticketypom.com)
-
 ### [MacBox](https://github.com/Tomnowell/macbox) - Learning to Swift
 While I have recently really enjoyed coding in Go and Python, I like iOS and macOS and thought it would be good to learn some Swift. This project currently not shipped but I've been Alpha testing it for a while. If you'd like to help me Beta test drop me a message.
 [![MacBox on Github](/images/macBox.jpeg)](https://github.com/Tomnowell/macbox)
