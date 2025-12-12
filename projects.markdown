@@ -7,6 +7,7 @@ permalink: /projects/
 I love making and breaking things to see how they work. Most of my projects have been on hold while I completed a master's in Computer Science. Since finishing, I've had a little more time to devote to personal projects while my toddler and baby are asleep, here's what I've been working on:
 
 ---
+
 ### [TomTimer / TicketyPom](https://ticketypom.com) - Loving Swift
 Swift is an awesome language to code in. I really enjoyed playing around with Go, and while Swift does seem to be a bit more complicated, I've noticed some similarities that I like. And some quirks that really stumped me. Implicit self really confused me looking at other peoples' code. I couldn't understand how, what looked like local variables, were still in scope in other methods of a class.
 
@@ -22,6 +23,8 @@ This project taught me a lot about what actually goes into an iOS app. I thought
     <img src="/images/ticketyPomWatchOS.png" alt="Tickety Pom watchOS screenshot" width="300" />
   </a>
 </div>
+
+---
 
 ### [MacBox](https://github.com/Tomnowell/macbox) - Learning to Swift
 While I have recently really enjoyed coding in Go and Python, I like iOS and macOS and thought it would be good to learn some Swift. This project currently not shipped but I've been Alpha testing it for a while. If you'd like to help me Beta test drop me a message.
