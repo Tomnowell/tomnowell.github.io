@@ -35,6 +35,8 @@ While I have recently really enjoyed coding in Go and Python, I like iOS and mac
 ### [GoDis](https://github.com/Tomnowell/GoDis)
 [GoDis](https://github.com/Tomnowell/GoDis) is an exercise in Go implementing a very basic Redis style cache. This project really allowed me to appreciate Go's simplicity while exploring go routines and ways to approach unit testing in Go.
 
+I really should have called it DisGo, though...branding is not my speciality.
+
 ---
 
 ### [Reggie](https://github.com/Tomnowell/Reggie)
