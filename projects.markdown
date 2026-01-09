@@ -7,6 +7,14 @@ permalink: /projects/
 I love making and breaking things to see how they work. Most of my projects have been on hold while I completed a master's in Computer Science. Since finishing, I've had a little more time to devote to personal projects while my toddler and baby are asleep, here's what I've been working on:
 
 ---
+### [πPhone](https://github.com/Tomnowell/Mercury) - Reinventing the Wheel
+I've had this (probably ridiculous) idea bouncing round my head for a while now. Wouldn't it be nice to have a solid, corded phone that's always in the same place and rings when friends and family call it? This (far from finished) project implements a simple VoIP phone system with a registry server to track phone numbers and IDs. 
+
+The idea is that users will be able to have their very own semi-private phone network running over the internet. Dangerous - yes, I'm sure it is! Don't rely on it for sensitive communications. Bonkers - almost certainly - if you have a smartphone in your pocket and want to talk to your friends, just fire-up Skype...oh no... RIP Skype. But, possibly an awesome use for the Rasberry Pi you've had kicking around forever.
+
+Okay, there's no hardware support yet, but one of my early goals is to implement a simple dialling system that will work with a real tone-dialing phone of yore... The middle ages is calling, they wan't their Yellow-Pages back, please.
+
+If only a fruity trillion-dollar company would take this project on, it would be the most delicious telephony system..served with ice-cream...
 
 ### [TomTimer / TicketyPom](https://ticketypom.com) - Loving Swift
 Swift is an awesome language to code in. I really enjoyed playing around with Go, and while Swift does seem to be a bit more complicated, I've noticed some similarities that I like. And some quirks that really stumped me. Implicit self really confused me looking at other peoples' code. I couldn't understand how, what looked like local variables, were still in scope in other methods of a class.

@@ -1,0 +1,9 @@
+Okay, I kept my head under a rock for a long time on LLM code generation because I was pursuing an MSc in Computer Science and I really wanted to learn the topics I was studying deeply and I could foresee complications of authenticity with AI generated code. So, I stayed clear of the vibe-coding / agent-god paradigm of coding for a long time. But, when I graduated I felt I should explore this brave new world. And wow! It blew my mind! How many lines of code I could create in a day. How many features I could prototype. How easy it was to switch language. I was most comfortable in Python having used it for my capstone project, but also happy coding in C, not C++, C#, Swift, I wouldn't even mind coding in Objective C it'll just take a long time. But using an LLM made a language change superficial.
+
+Recently I tried a little "vibe coding"as the kids are calling it...basically giving your program specifications in natural English language and letting the LLM interpret that into code.
+
+Previously this was a task reserved for the most handsome/beautiful/helpful people with CS degrees or Code Camp / Open Source credentials, now anyone with access to an LLM and a firm handle on (at least) the English language (and maybe others) could produce code that somewhat met the specifications given in sloppy English. 
+
+The problem is that I have improved as a developer since then, and also (I hope) as a human being. 
+
+Yes, I think automating away dangerous and damaging tasks is the most important work humanity is doing. I also understand the need for practical fusion nuclear energy generation and 

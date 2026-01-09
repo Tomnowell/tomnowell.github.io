@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "32d1c64c86b05da7",
+        "id": "c738c5edab1b2a27",
         "type": "tabs",
         "children": [
           {
-            "id": "7526fba0d9a5ba98",
+            "id": "fe2ceaefa6880559",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CoPilot or AutoPilot.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "CoPilot or AutoPilot"
+              "title": "New tab"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CoPilot or AutoPilot.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for CoPilot or AutoPilot"
+              "title": "Backlinks"
             }
           },
           {
@@ -166,7 +161,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "7526fba0d9a5ba98",
+  "active": "fe2ceaefa6880559",
   "lastOpenFiles": [
     "CoPilot or AutoPilot.md"
   ]
