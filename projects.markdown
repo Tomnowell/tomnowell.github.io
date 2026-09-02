@@ -43,7 +43,7 @@ While I have recently really enjoyed coding in Go and Python, I like iOS and mac
 ### [GoDis](https://github.com/Tomnowell/GoDis)
 [GoDis](https://github.com/Tomnowell/GoDis) is an exercise in Go implementing a very basic Redis style cache. This project really allowed me to appreciate Go's simplicity while exploring go routines and ways to approach unit testing in Go.
 
-I really should have called it DisGo, though...branding is not my speciality.
+I really should have called it reDisGo 🕺 ...branding is not my speciality.
 
 ---
 
@@ -56,16 +56,6 @@ I really should have called it DisGo, though...branding is not my speciality.
 This is an ongoing project for a product that almost certainly doesn't need to exist, but I like consolidating organisational apps and this is going to be the app I wanted when I was studying and trying to raise a family and work a full-time job. It's also really fun to explore GitHub Actions with Render for CD. I've done Azure DevOps stuff before, but it's more interesting to spread it out over different providers.
 [![ticketydo on github]](https://github.com/Tomnowell/TicketyDo]
 [ticketydo](https://ticketydo.com)
-
----
-
-### Il Pane - A Sourdough Hydration Calculator in C# for Windows
-
-I wrote this simple bread dough hydration calculator in C# to replace a handy little iOS app that I used previously. The iOS app was not updated and eventually would no longer run on the current version of iOS. The application utilises a SQLite database to store recipes.
-
-In the future I plan to use .NET to turn this into a multi platform mobile application. When time allows...
-
-[![Il Pane on Github](/images/ilPane.jpg)](https://github.com/Tomnowell/IlPane)
 
 ---
 
