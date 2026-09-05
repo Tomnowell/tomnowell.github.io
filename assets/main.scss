@@ -39,10 +39,20 @@ body {
     margin-bottom: 0;
     float: none;
     align-content: center;
+    text-decoration: none;
+    background-image: none;
+    border-bottom: none;
 
     &,
     &:visited {
       color: var(--accent);
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background-image: none;
+      border-bottom: none;
     }
 
   }
