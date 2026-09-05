@@ -27,6 +27,7 @@ body {
   h1, h2, h3, h4, h5, h6 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: $base-font-weight;
+    color: var(--accent);
 }
 
 .site-title {
@@ -41,7 +42,7 @@ body {
 
     &,
     &:visited {
-      color: $grey-color-dark;
+      color: var(--accent);
     }
 
     &::after {
@@ -55,9 +56,6 @@ body {
       transition: width 180ms ease;
     }
 
-    &:hover::after {
-      width: 65%;
-    }
   }
 
   .site-header {
