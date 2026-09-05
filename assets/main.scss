@@ -45,17 +45,6 @@ body {
       color: var(--accent);
     }
 
-    &::after {
-      content: "";
-      display: block;
-      width: 40%;
-      height: 2px;
-      margin-top: 3px;
-      border-radius: 2px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-      transition: width 180ms ease;
-    }
-
   }
 
   .site-header {
