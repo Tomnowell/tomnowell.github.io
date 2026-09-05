@@ -39,9 +39,13 @@ body {
     margin-bottom: 0;
     float: none;
     align-content: center;
+    display: inline-block;
     text-decoration: none;
-    background-image: none;
-    border-bottom: none;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0 2px;
+    transition: background-size 180ms ease;
 
     &,
     &:visited {
@@ -51,8 +55,7 @@ body {
     &:hover,
     &:focus {
       text-decoration: none;
-      background-image: none;
-      border-bottom: none;
+      background-size: 100% 2px;
     }
 
   }
@@ -72,16 +75,11 @@ body {
   **/
   a {
     text-decoration: none;
-    background-image: linear-gradient(var(--accent), var(--accent));
-    background-repeat: no-repeat;
-    background-size: 0 2px;
-    background-position: 0 100%;
-    transition: background-size 180ms ease, color 180ms ease;
+    transition: color 180ms ease;
 
     &:hover {
         color: $text-color;
         text-decoration: none;
-        background-size: 100% 2px;
       }
   }
 
