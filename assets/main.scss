@@ -87,6 +87,22 @@ body {
     background-image: none;
   }
 
+  .site-nav .page-link {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0 2px;
+    transition: background-size 180ms ease, color 180ms ease;
+
+    &:hover,
+    &:focus {
+      background-size: 100% 2px;
+    }
+  }
+
   .post-list > li {
     padding: 12px 14px;
     border-radius: 10px;
