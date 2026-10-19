@@ -7,6 +7,18 @@ permalink: /projects/
 I love making and breaking things to see how they work. Most of my projects have been on hold while I completed a master's in Computer Science. Since finishing, I've had a little more time to devote to personal projects while my toddler and baby are asleep, here's what I've been working on:
 
 ---
+
+### [PAIR]() - This one's a little bit sensitive
+
+PAIR stands for Pentest AI Reporter. For what I hope are obvious reasons, I shall not make the code or the design public. But I'm happy to discuss my thoughts on AI in the cybersecurity landscape. This project is a harness designed for a local AI with guardrails mostly removed to conduct a very specific penetration test of a very specific network. The difficulty hasn't been in getting the AI to hack. My ethical hacking concience and desire to use this technology for good have made me build this with guardrails in the harness, rather than in the AI model. The model mostly directs the operation with every command and proceedure being checked against a global and project specific allowlist. Test and target environments are sandboxed and no rogue AI behaviour is accepted.
+
+---
+
+### [HackerTime](https://github.com/HackerTimeQuest) - U Can't Hack This
+
+This project has been at the back of my mind for a while now. I love sites like Try Hack Me and Hack The Box. I think they provide excellent resources to learn and practice all aspects of cybersecurity. One issue I've had with them both, consistently, is the speed (or lack thereof) of the VMs / cyberrange environments. HackerTime and the labs at HackerTimeQuest are my attempt to build a PAYG cyberrange that offers flexible provisioning for the cyberrange assets. If the lab is a simple ssh pwnbox or similar, a container might be all that is required. If you want to get hands on with a full Elastic Stack implementation, you're going to need some CPU and memory behind it unless you want it to feel like quicksand. That's the inspiration behind this project. My actual experiences on Try Hack Me, trying desperately to use the Elasticsearch UI and drowning in VM juice.
+
+---
 ### [πPhone](https://github.com/Tomnowell/Mercury) - Reinventing the Wheel
 I've had this (probably ridiculous) idea bouncing round my head for a while now. Wouldn't it be nice to have a solid, corded phone that's always in the same place and rings when friends and family call it? This (far from finished) project implements a simple VoIP phone system with a registry server to track phone numbers and IDs. 
 
@@ -34,19 +46,15 @@ This project taught me a lot about what actually goes into an iOS app. I thought
 
 ---
 
-### [PAIR]() - This one's a little bit sensitive
-PAIR stands for Pentest AI Reporter. For what I hope are obvious reasons, I shall not make the code or the design public. But I'm happy to discuss my thoughts on AI in the cybersecurity landscape. This project is a harness designed for a local AI with guardrails mostly removed to conduct a very specific penetration test of a very specific network. The difficulty hasn't been in getting the AI to hack. My ethical hacking concience and desire to use this technology for good have made me build this with guardrails in the harness, rather than in the AI model. The model mostly directs the operation with every command and proceedure being checked against a global and project specific allowlist. Test and target environments are sandboxed and no rogue AI behaviour is accepted.
-
-### [HackerTime](https://github.com/HackerTimeQuest) - U Can't Hack This
-This project has been at the back of my mind for a while now. I love sites like Try Hack Me and Hack The Box. I think they provide excellent resources to learn and practice all aspects of cybersecurity. One issue I've had with them both, consistently, is the speed (or lack thereof) of the VMs / cyberrange environments. HackerTime and the labs at HackerTimeQuest are my attempt to build a PAYG cyberrange that offers flexible provisioning for the cyberrange assets. If the lab is a simple ssh pwnbox or similar, a container might be all that is required. If you want to get hands on with a full Elastic Stack implementation, you're going to need some CPU and memory behind it unless you want it to feel like quicksand. That's the inspiration behind this project. My actual experiences on Try Hack Me, trying desperately to use the Elasticsearch UI and drowning in VM juice. 
-
 ### [MacBox](https://github.com/Tomnowell/macbox) - Learning to Swift
+
 While I have recently really enjoyed coding in Go and Python, I like iOS and macOS and thought it would be good to learn some Swift. This project currently not shipped but I've been Alpha testing it for a while. If you'd like to help me Beta test drop me a message.
 [![MacBox on Github](/images/macBox.jpeg)](https://github.com/Tomnowell/macbox)
 
 ---
 
 ### [GoDis](https://github.com/Tomnowell/GoDis)
+
 [GoDis](https://github.com/Tomnowell/GoDis) is an exercise in Go implementing a very basic Redis style cache. This project really allowed me to appreciate Go's simplicity while exploring go routines and ways to approach unit testing in Go.
 
 I really should have called it reDisGo 🕺 ...branding is not my speciality.
@@ -54,19 +62,13 @@ I really should have called it reDisGo 🕺 ...branding is not my speciality.
 ---
 
 ### [Reggie](https://github.com/Tomnowell/Reggie)
+
 [Reggie](https://github.com/Tomnowell/Reggie) was my first project in Go and implements a very basic recursive regex matcher. The initial implementation was heavily influenced by [Rob Pike's regex matcher](https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html) in C. Although this example adds a few extras which were a lot of fun to make.
 
 ---
 
 ### [TicketyDo](https://github.com/Tomnowell/TicketyDo) - An exercise in CI/CD - ToDo List with built-in Pomodoro
+
 This is an ongoing project for a product that almost certainly doesn't need to exist, but I like consolidating organisational apps and this is going to be the app I wanted when I was studying and trying to raise a family and work a full-time job. It's also really fun to explore GitHub Actions with Render for CD. I've done Azure DevOps stuff before, but it's more interesting to spread it out over different providers.
 [![ticketydo on github]](https://github.com/Tomnowell/TicketyDo]
 [ticketydo](https://ticketydo.com)
-
----
-
-### T-Bay - A Django based Ebay Clone
-
-Written to complete the *Commerce* challenge on Harvards online MOOC CS50 Web, this is my attempt at an ebay clone. While I feel quite comfortable using Python, this was my first attempt at using the Django framework. Good fun!
-
-[![T Bay on Github](/images/Tbay.jpg)](https://github.com/Tomnowell/cs50w-commerce)
