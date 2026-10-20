@@ -57,7 +57,7 @@ Let's first outline the anomaly detection pipeline: The dataset is first cleaned
 
 ```mermaid
 flowchart LR;
-    A["Dataset"] --> B["Data Preprocessing"];
+    A["Dataset"] --> B["Preprocessing"];
     B --> C["Random Forest<br/>Feature Selection"];
     C --> D["Genetic Algorithm<br/>Centroid Optimisation"];
     D --> E["Inlier Pruning"];
