@@ -74,7 +74,7 @@ flowchart TB;
     E["Inlier Pruning"] --> F["LDOF<br/>Outlier Detection"];
     F --> G["Anomaly Classification"];
   end
-  D --> E;
+  first_row --> second_row;
   style first_row fill:transparent,stroke:transparent;
   style second_row fill:transparent,stroke:transparent;
 ```
