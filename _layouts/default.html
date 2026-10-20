@@ -2,6 +2,18 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
     {% include head.html%}
     {% include google_analytics.html %}
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
+    </script>
+
+    <script type="text/javascript">
+    window.MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+    };
+    </script>
 
     <body>
         {% include header.html %}
