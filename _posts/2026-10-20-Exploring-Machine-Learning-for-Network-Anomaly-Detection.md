@@ -3,8 +3,10 @@ layout: post
 title: Exploring Machine Learning for Network Anomaly Detection
 date: 2026-10-20 00:00:00 +0900
 categories:
-  - cybersecurity
-  - ML
+  - Cybersecurity
+tags:
+  - Machine Learning
+  - Genetic Algorithms
 ---
 
 ## Revisiting my Master's Research Project
