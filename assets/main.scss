@@ -4,7 +4,7 @@
 @import "minima";
 
 :root {
-  --link-color: #0F7533
+  --link-color: #0F7533;
   --link-hover-color: #5ECAC1;
   --paper-top: #fcfbf8;
   --paper-bottom: #f5f3ed;
@@ -165,6 +165,25 @@ body {
     font: inherit;
     line-height: inherit;
     padding: 0;
+  }
+
+  .mermaid {
+    display: flex;
+    justify-content: center;
+    margin: 1.25rem auto;
+    overflow-x: auto;
+  }
+
+  .mermaid svg {
+    display: block;
+    max-width: 92%;
+    height: auto;
+    font-size: 14px;
+  }
+
+  .mermaid .node rect {
+    rx: 8px;
+    ry: 8px;
   }
 
   .site-footer {

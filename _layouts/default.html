@@ -29,7 +29,30 @@
         <script type="module">
             import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 
-            mermaid.initialize({ startOnLoad: false });
+            mermaid.initialize({
+                startOnLoad: false,
+                theme: 'base',
+                themeVariables: {
+                    primaryColor: '#0F766E',
+                    primaryBorderColor: '#0F7533',
+                    primaryTextColor: '#ffffff',
+                    secondaryColor: '#5ECAC1',
+                    secondaryBorderColor: '#0F766E',
+                    secondaryTextColor: '#1f2933',
+                    tertiaryColor: '#754D0F',
+                    tertiaryBorderColor: '#75310F',
+                    tertiaryTextColor: '#ffffff',
+                    lineColor: '#75310F',
+                    edgeLabelBackground: '#5ECAC1',
+                    fontSize: '14px'
+                },
+                flowchart: {
+                    nodeSpacing: 35,
+                    rankSpacing: 35,
+                    padding: 8,
+                    useMaxWidth: true
+                }
+            });
 
             document.querySelectorAll('pre code.language-mermaid').forEach((code) => {
                 const diagram = document.createElement('pre');
