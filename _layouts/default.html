@@ -39,6 +39,47 @@
             });
 
             await mermaid.run();
+
+            const dropcapParagraphs = document.querySelectorAll('.post-content p:first-of-type');
+            const measureDropcapParagraph = (paragraph) => {
+                if (paragraph.closest('.mermaid')) {
+                    paragraph.classList.add('mermaid-content');
+                    return;
+                }
+
+                const computed = getComputedStyle(paragraph);
+                const clone = paragraph.cloneNode(true);
+                clone.classList.add('dropcap-measuring');
+                clone.classList.add('single-line');
+                Object.assign(clone.style, {
+                    boxSizing: computed.boxSizing,
+                    font: computed.font,
+                    left: '-10000px',
+                    letterSpacing: computed.letterSpacing,
+                    lineHeight: computed.lineHeight,
+                    margin: '0',
+                    padding: computed.padding,
+                    position: 'fixed',
+                    textIndent: computed.textIndent,
+                    top: '0',
+                    visibility: 'hidden',
+                    whiteSpace: computed.whiteSpace,
+                    width: `${paragraph.getBoundingClientRect().width}px`,
+                    wordSpacing: computed.wordSpacing
+                });
+                paragraph.after(clone);
+
+                const range = document.createRange();
+                range.selectNodeContents(clone);
+                const lineCount = new Set(Array.from(range.getClientRects(), (rect) => Math.round(rect.top))).size;
+                clone.remove();
+                paragraph.classList.toggle('single-line', lineCount <= 1);
+            };
+
+            const dropcapObserver = new ResizeObserver((entries) => {
+                entries.forEach(({ target }) => measureDropcapParagraph(target));
+            });
+            dropcapParagraphs.forEach((paragraph) => dropcapObserver.observe(paragraph));
         </script>
         
     </body>

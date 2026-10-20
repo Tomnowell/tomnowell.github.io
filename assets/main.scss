@@ -135,7 +135,7 @@ body {
     margin-bottom: 10px;
   }
 
-  .post-content p:first-of-type:first-letter {
+  .post-content p:first-of-type:not(.single-line):not(.mermaid-content):first-letter {
     color: #900;
     float: left;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -143,6 +143,14 @@ body {
     line-height: 60px;
     padding-right: 8px;
     padding-left: 3px;
+  }
+
+  .post-content p.dropcap-measuring:first-letter {
+    color: inherit;
+    float: none;
+    font: inherit;
+    line-height: inherit;
+    padding: 0;
   }
 
   .site-footer {
