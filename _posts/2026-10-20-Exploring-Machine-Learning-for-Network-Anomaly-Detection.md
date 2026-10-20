@@ -58,13 +58,21 @@ To validate the results, I reconstructed the anomaly detection pipeline as best 
 Let's first outline the anomaly detection pipeline: The dataset is first cleaned and normalised, feature selection is performed by a random forest classifier and then genetic algorithms find cluster centroids within the multi-dimensional data by evaluating their fit using the [Davies Bouldin Index](https://dl.acm.org/doi/10.1109/TPAMI.1979.4766909). Those centroids are used to prune inliers, reducing computational complexity. Outliers are then detected using a technique called [Local Distance-based Outlier Factor(LDOF).](https://arxiv.org/abs/0903.3257)
 
 ```mermaid
-flowchart LR;
+flowchart TB;
+  subgraph first_row[" "]
+    direction LR
     A["Dataset"] --> B["Preprocessing"];
     B --> C["Random Forest<br/>Feature Selection"];
     C --> D["Genetic Algorithm<br/>Centroid Optimisation"];
-    D --> E["Inlier Pruning"];
-    E --> F["LDOF<br/>Outlier Detection"];
+  end
+  subgraph second_row[" "]
+    direction RL
+    E["Inlier Pruning"] --> F["LDOF<br/>Outlier Detection"];
     F --> G["Anomaly Classification"];
+  end
+  first_row --> second_row;
+  style first_row fill:transparent,stroke:transparent;
+  style second_row fill:transparent,stroke:transparent;
 ```
 
 ### Baroooooo!
