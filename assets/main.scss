@@ -192,6 +192,10 @@ body {
     ry: 8px;
   }
 
+  .mermaid .titleText {
+    fill: var(--accent) !important;
+  }
+
   .site-footer {
     background: linear-gradient(to top, var(--footer-wash), transparent 40%);
     border-top-color: var(--line-soft);

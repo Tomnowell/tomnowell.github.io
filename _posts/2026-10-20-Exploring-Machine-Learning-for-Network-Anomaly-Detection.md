@@ -60,6 +60,10 @@ Let's first outline the anomaly detection pipeline: The dataset is first cleaned
 ```mermaid
 ---
 title: Data Pipeline for Anomaly Detection
+config:
+  theme: base
+  themeVariables: 
+    fontSize: 30px
 ---
 
 flowchart LR;
