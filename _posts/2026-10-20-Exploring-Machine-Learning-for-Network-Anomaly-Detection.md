@@ -62,21 +62,13 @@ Let's first outline the anomaly detection pipeline: The dataset is first cleaned
 title: Data Pipeline for Anomaly Detection
 ---
 
-flowchart TB;
-  subgraph first_row[" "]
-    direction LR
-    A["Dataset"] --> B["Preprocessing"];
-    B --> C["Random Forest<br/>Feature Selection"];
-    C --> D["Genetic Algorithm<br/>Centroid Optimisation"];
-  end
-  subgraph second_row[" "]
-    direction RL
-    E["Inlier Pruning"] --> F["LDOF<br/>Outlier Detection"];
-    F --> G["Anomaly Classification"];
-  end
-  first_row --> second_row;
-  style first_row fill:transparent,stroke:transparent;
-  style second_row fill:transparent,stroke:transparent;
+flowchart LR;
+  A["Dataset"] --> B["Preprocessing"];
+  B --> C["Random Forest<br/>Feature Selection"];
+  C --> D["Genetic Algorithm<br/>Centroid Optimisation"];
+  D --> E["Inlier Pruning"];
+  E --> F["LDOF<br/>Outlier Detection"];
+  F --> G["Anomaly Classification"];
 ```
 
 ### Baroooooo!
