@@ -25,6 +25,21 @@
         </div>
 
         {% include footer.html %}
+
+        <script type="module">
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+            mermaid.initialize({ startOnLoad: false });
+
+            document.querySelectorAll('pre code.language-mermaid').forEach((code) => {
+                const diagram = document.createElement('pre');
+                diagram.className = 'mermaid';
+                diagram.textContent = code.textContent;
+                code.parentElement.replaceWith(diagram);
+            });
+
+            await mermaid.run();
+        </script>
         
     </body>
 </html>
