@@ -11,36 +11,43 @@ categories:
 
 It's been about a year and a half since I clicked submit on the report that would cap my master's degree. I had worked hard on it and while the technical accomplishment was not particularly impressive, I had stuck to my academic goals of clarifying and validating (or invalidating) some previous research. 
 
-The research I had based my project on was a paper submitted for a conference [Genetic Algorithm Based Anomaly Detection for Intrusion Detection](https://link.springer.com/chapter/10.1007/978-3-031-47224-4_17)  from the AMRIT conference in Silchar, India. While I do not wish to speak negatively about the researchers or the research itself, it contained some repeating patterns in the data that I couldn't explain. In particular precision and recall for each experiment were reportedly identical (giving identical F1 scores, too). 
+The research I had based my project on was a paper submitted for a conference [Genetic Algorithm Based Anomaly Detection for Intrusion Detection](https://link.springer.com/chapter/10.1007/978-3-031-47224-4_17)  from the AMRIT conference in Silchar, India. While I do not wish to speak negatively about the researchers or the research itself, it contained some repeating patterns in the data that I couldn't explain. In particular precision and recall for each experiment were reportedly identical (giving identical F1 scores, too).
 
 ### Nitpicking
 
-That set of some alarm bells almost immediately. In terms of true positive (TP) and false positive (FP) we say that:
+That set off some alarm bells almost immediately. In terms of true positive (TP) and false positive (FP) we say that:
 
 $$
 Precision = \frac{TP}{TP+FP}
 $$
+
 and:
+
 $$
 Recall = \frac{TP}{TP+FN}
 $$
 
 Therefore:
+
 $$
 \frac{TP}{TP+FP}=\frac{TP}{TP+FN}
 $$
 
 Assuming $TP \neq 0$ :
+
 $$
 TP+FP=TP+FN
 $$
+
 So, if precision and recall are identical, then:
+
 $$
 FP = FN
 $$
- Of course, there's a caveat here. The results are reported to three decimal places, so precision and recall might not actually be identical in the underlying calculation. However, seeing this pattern repeat across different experimental configurations was enough to make me curious.
- 
- Furthermore, the results were not very encouraging. I was surprised that the results were so poor, particularly given that the paper presented the approach as a *promising anomaly detection methodology*. Anyway, the paper wasn't very long and immediately, I found a few points that I would like more clarification on. The first was the exact methodology chosen. There were some clear omissions, like how exactly inliers to be pruned were defined, making a direct validation of the results impossible without further clarification. I tried emailing the lead author of the paper but got no reply. I also noticed that the dataset used in the experiment was really small, just a few thousand records. While this likely enabled the experiment to work on modest hardware, I questioned how generalisable and potentially effective this methodology could be when scaled to larger systems.
+
+Of course, there's a caveat here. The results are reported to three decimal places, so precision and recall might not actually be identical in the underlying calculation. However, seeing this pattern repeat across different experimental configurations was enough to make me curious.
+
+Furthermore, the results were not very encouraging. I was surprised that the results were so poor, particularly given that the paper presented the approach as a *promising anomaly detection methodology*. Anyway, the paper wasn't very long and immediately, I found a few points that I would like more clarification on. The first was the exact methodology chosen. There were some clear omissions, like how exactly inliers to be pruned were defined, making a direct validation of the results impossible without further clarification. I tried emailing the lead author of the paper but got no reply. I also noticed that the dataset used in the experiment was really small, just a few thousand records. While this likely enabled the experiment to work on modest hardware, I questioned how generalisable and potentially effective this methodology could be when scaled to larger systems.
 
 ### Validation
 
