@@ -168,16 +168,21 @@ body {
   }
 
   .mermaid {
-    display: flex;
-    justify-content: center;
+    display: block;
     margin: 1.25rem auto;
     overflow-x: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    text-align: center;
+    white-space: normal;
   }
 
   .mermaid svg {
     display: block;
-    max-width: 92%;
+    max-width: 100%;
     height: auto;
+    margin: 0 auto;
     font-size: 14px;
   }
 
