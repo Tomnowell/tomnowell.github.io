@@ -4,6 +4,6 @@ title: Blog
 permalink: /blog/
 ---
 
-### Welcome  
+### Welcome
 
 ## [Categories](/blog/categories)

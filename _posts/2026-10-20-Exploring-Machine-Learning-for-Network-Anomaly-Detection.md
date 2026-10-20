@@ -5,7 +5,6 @@ date: 2026-10-20 00:00:00 +0900
 categories:
   - cybersecurity
   - ML
-comments: true
 ---
 
 ## Revisiting my Master's Research Project
