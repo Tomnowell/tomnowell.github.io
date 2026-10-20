@@ -9,7 +9,7 @@ categories:
 
 ## Revisiting my Master's Research Project
 
-It's been about a year and a half since I clicked submit on the report that would cap my master's degree. I had worked hard on it and while the technical accomplishment was not particularly impressive, I had stuck to my academic goals of clarifying and validating (or invalidating) some previous research. 
+It has been about a year and a half since I clicked submit on the report that would cap my master's degree. I had worked hard on it and while the technical accomplishment was not particularly impressive, I had stuck to my academic goals of clarifying and validating (or invalidating) some previous research. 
 
 The research I had based my project on was a paper submitted for a conference [Genetic Algorithm Based Anomaly Detection for Intrusion Detection](https://link.springer.com/chapter/10.1007/978-3-031-47224-4_17)  from the AMRIT conference in Silchar, India. While I do not wish to speak negatively about the researchers or the research itself, it contained some repeating patterns in the data that I couldn't explain. In particular precision and recall for each experiment were reportedly identical (giving identical F1 scores, too).
 
