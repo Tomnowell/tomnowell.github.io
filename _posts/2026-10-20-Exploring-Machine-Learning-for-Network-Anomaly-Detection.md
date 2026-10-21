@@ -64,6 +64,7 @@ config:
   theme: base
   themeVariables: 
     fontSize: 30px
+    titleColor: #75310F
 ---
 
 flowchart LR;
