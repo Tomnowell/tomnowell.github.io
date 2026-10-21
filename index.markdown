@@ -1,8 +1,10 @@
 ---
 layout: page
+title: Home
+permalink: /
 ---
 
-<div> <img src="/images/kirishima.jpg" alt="Kirishima Shrine in Kagoshima, Japan" /> </div>
+![Home Banner: Kirishima Shrine](/assets/images/kirishima.jpg)
 
 ---
 

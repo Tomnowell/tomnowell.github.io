@@ -4,6 +4,12 @@ title: Blog
 permalink: /blog/
 ---
 
-### Welcome
+![Blog Banner: Kagoshima Coast](/assets/images/kagoshima.jpg)
 
-## [Categories](/blog/categories)
+---
+
+## Welcome
+
+Where I write about things that interest me. I hope they interest you, too.
+
+### [Categories](/blog/categories)

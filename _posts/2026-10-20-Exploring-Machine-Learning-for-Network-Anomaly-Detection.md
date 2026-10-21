@@ -8,6 +8,9 @@ tags:
   - Machine Learning
   - Genetic Algorithms
 ---
+![Takachiho Mountain](/assets/images/takachiho.jpg)
+
+---
 
 ## Revisiting my Master's Research Project
 
@@ -57,20 +60,12 @@ To validate the results, I reconstructed the anomaly detection pipeline as best 
 
 Let's first outline the anomaly detection pipeline: The dataset is first cleaned and normalised, feature selection is performed by a random forest classifier and then genetic algorithms find cluster centroids within the multi-dimensional data by evaluating their fit using the [Davies Bouldin Index](https://dl.acm.org/doi/10.1109/TPAMI.1979.4766909). Those centroids are used to prune inliers, reducing computational complexity. Outliers are then detected using a technique called [Local Distance-based Outlier Factor(LDOF).](https://arxiv.org/abs/0903.3257)
 
+#### Data Pipeline Flow Diagram
 ```mermaid
----
-title: Data Pipeline for Anomaly Detection
-config:
-  theme: base
-  themeVariables: 
-    fontSize: 30px
-    titleColor: #75310F
----
-
 flowchart LR;
-  A["Dataset"] --> B["Preprocessing"];
+  A["Dataset"] --> B["Pre-processing"];
   B --> C["Random Forest<br/>Feature Selection"];
-  C --> D["Genetic Algorithm<br/>Centroid Optimisation"];
+  C --> D["Genetic Algorithm<br/>Centroid Identification"];
   D --> E["Inlier Pruning"];
   E --> F["LDOF<br/>Outlier Detection"];
   F --> G["Anomaly Classification"];
@@ -80,7 +75,7 @@ flowchart LR;
 
 Have you noticed the elephant in the room? Both the original paper, and my recreation, make no mention about how network data is usually ingested or monitored. That's because this dataset comes as a set of prepared csv files. What is the point of looking for a deviation from a baseline in a static snapshot of the whole network data over 5 days? An effective online anomaly detector should establish a baseline and then look for outliers from that baseline. Simply clustering all all data points and then looking for outliers is a fundamentally different proposition.
 
-My facepalm moment lasted only so long. My goal for my master's degree was not to create the best anomaly detector that I could, it was to validate the methodology used in the paper my research was based on. I think I did that, establishing that with careful choice of hyper-parameters and number of clusters a slightly-better-than-pure-luck outcome could be achieved. I couldn't recreate the results of the conference paper as hard as I tried. My pipeline was, well, not to brag about it...better. 
+My facepalm moment lasted only so long. My goal for my master's degree was not to create the best anomaly detector that I could, it was to validate the methodology used in the paper my research was based on. I think I did that, establishing that with careful choice of hyper-parameters and number of clusters a slightly-better-than-pure-luck outcome could be achieved. I couldn't recreate the results of the conference paper as hard as I tried. My pipeline was, well, not to brag about it...better.
 
 I say it was better, my university gave me access to the [Viking compute cluster](https://www.york.ac.uk/it-services/tools/viking/). With 96 CPU cores per compute node and enough memory that in today's economy might buy a small country. It was pretty computationally intense.
 

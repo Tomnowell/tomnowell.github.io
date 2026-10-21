@@ -27,7 +27,8 @@
         {% include footer.html %}
 
         <script type="module">
-            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@12.2.0/+esm'
 
             mermaid.initialize({
                 startOnLoad: false,
@@ -44,10 +45,10 @@
                     tertiaryTextColor: '#ffffff',
                     lineColor: '#75310F',
                     edgeLabelBackground: '#5ECAC1',
-                    titleColor: '#0F766E',
-                    fontSize: '20px'
+                    fontSize: '30px'
                 },
                 flowchart: {
+                    titleColor: '#000000',
                     nodeSpacing: 35,
                     rankSpacing: 35,
                     padding: 8,

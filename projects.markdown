@@ -4,6 +4,10 @@ title: Projects
 permalink: /projects/
 ---
 
+![Projects Banner: Carmarthenshire Snowy Scene](/assets/images/carmarthenshire.jpg)
+
+---
+
 I love making and breaking things to see how they work. Most of my projects have been on hold while I completed a master's in Computer Science. Since finishing, I've had a little more time to devote to personal projects while my toddler and baby are asleep, here's what I've been working on:
 
 ---
